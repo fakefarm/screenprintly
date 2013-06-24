@@ -11,6 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130624153027) do
+
+  create_table "printers", :force => true do |t|
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "email"
+    t.string   "contact_name"
+    t.integer  "phone"
+    t.string   "address"
+    t.integer  "zipcode"
+    t.string   "website"
+    t.boolean  "pending"
+  end
 
 end
