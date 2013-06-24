@@ -1,13 +1,19 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'neat'
+gem 'pg'
+gem 'haml'
+gem "haml-rails"
+gem 'pry'
+gem 'awesome_print'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 
 group :development, :test do
+  gem 'sqlite3'
   gem 'rspec-rails', '~> 2.13.0'
   gem 'factory_girl_rails', '~> 4.2.1'
 end
