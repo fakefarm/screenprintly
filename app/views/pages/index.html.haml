@@ -1,15 +1,24 @@
-=image_tag '#'
-=link_to 'How it works'
-=link_to 'Why ScreenPrintly'
-=link_to 'Printer login'
-
-%h1 Need T-shirts?
-%h2 Get quotes from local printers.
-%h3 Available cities
-%h4 Boulder placeholder
-
-= link_to 'get quotes'
+.header
+  %ul
+    %li=link_to 'How it works'
+    %li=link_to 'Why ScreenPrintly'
+    %li=link_to 'Printer login'
 
 
-=link_to 'List your shop'
-=link_to 'Request your city'
+.wrap
+  .logo=image_tag 'logo.png'
+  %h1 Need T-shirts?
+
+.spread
+  .wrap
+    %h2 Get quotes from local printers.
+
+.wrap
+  %h3 Available cities
+  %h4 Boulder placeholder
+
+  = link_to 'get quotes'
+
+.footer
+  =link_to 'List your shop'
+  =link_to 'Request your city'

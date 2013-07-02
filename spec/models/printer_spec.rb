@@ -5,6 +5,7 @@ describe Printer do
     it 'without an email' do
       expect(build(:printer, email: nil)).to have(1).errors_on(:email)
     end
+
     it 'without a contact name' do
       expect(build(:printer, contact_name: nil)).to have(1).errors_on(:contact_name)
     end
