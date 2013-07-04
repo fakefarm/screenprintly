@@ -7,5 +7,6 @@
 
 .wrap
   %h3 Participating cities
-  %ul
-    %li Boulder
+  - @cities.each do |city|
+    %ul
+      %li= city.name
