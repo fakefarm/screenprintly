@@ -1,2 +1,5 @@
-%h1 Cities#new
-%p Find me in app/views/cities/new.html.haml
+%h1 Enter new city name
+= form_for @city do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.submit

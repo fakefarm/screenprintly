@@ -1,2 +1,6 @@
 %h1 List of cities
-=link_to "New city"
+%ul
+- @cities.each do |city|
+  %li= city.name
+
+=link_to "New city", cities_new_path

@@ -9,17 +9,10 @@ feature 'Managing cities' do
   end
 
   scenario 'Adding a city' do
-    visit cities_path
-    click_link 'New city'
-    # enter name of city
-    # click create
-    # confirm it's been created in model
+    visit cities_new_path
+    page.should have_text("Enter new city name")
+    fill_in 'Name', :with => 'Denver'
+    click_button 'Create City'
+    page.should have_text("List of cities")
   end
-
-  scenario 'Viewing all cities' do
-    create(:city)
-    visit cities_path
-    # page should have 'boulder'
-  end
-
 end
