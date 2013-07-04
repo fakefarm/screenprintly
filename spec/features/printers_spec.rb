@@ -7,9 +7,10 @@ feature 'Printer' do
   end
 
   scenario 'creates an account' do
+    create(:city)
     visit new_printer_path
     fill_in 'Shop name', with: 'Screenprintly'
-    fill_in 'City', with: 1
+    select 'Boulder', from: 'City'
     fill_in 'Contact name', with: 'dave woodall'
     fill_in 'Email', with: 'dave@screenprintly.com'
     click_button 'Create Printer'

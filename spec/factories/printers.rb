@@ -7,7 +7,7 @@ FactoryGirl.define do
     email "dave@futura.com"
     contact_name "Dave"
     phone "(123)456-7890"
-    address "123 main st., Boulder CO 80305"
+    address "123 main st., Boulder"
     zipcode "12345"
   end
 end
