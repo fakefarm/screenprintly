@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703144539) do
+ActiveRecord::Schema.define(:version => 20130704182133) do
 
   create_table "cities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20130703144539) do
     t.integer  "zipcode"
     t.string   "website"
     t.boolean  "pending"
+    t.string   "shop_name"
+    t.integer  "city_id"
   end
 
 end

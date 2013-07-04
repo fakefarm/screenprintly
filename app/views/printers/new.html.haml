@@ -1,0 +1,12 @@
+%h1 Welcome!
+=form_for @printer do |f|
+  = f.label :shop_name
+  = f.text_field :shop_name
+  = f.label :city_id
+  = f.text_field :city_id
+  = f.label :contact_name
+  = f.text_field :contact_name
+  = f.label :email
+  = f.text_field :email
+  = f.submit
+

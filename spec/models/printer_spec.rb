@@ -12,11 +12,18 @@ describe Printer do
     it 'without a phone number' do
       expect(build(:printer, phone: nil)).to have(1).errors_on(:phone)
     end
-    it 'without an work address' do
+    it 'without a work address' do
       expect(build(:printer, address: nil)).to have(1).errors_on(:address)
     end
     it 'without a zipcode' do
       expect(build(:printer, zipcode: nil)).to have(1).errors_on(:zipcode)
+    end
+
+    it 'without a shop name' do
+      expect(build(:printer, shop_name: nil)).to have(1).errors_on(:shop_name)
+    end
+    it 'without a city id' do
+      expect(build(:printer, city_id: nil)).to have(1).errors_on(:city_id)
     end
   end
 

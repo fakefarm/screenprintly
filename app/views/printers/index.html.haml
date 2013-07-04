@@ -1,0 +1,6 @@
+%h1 Listing all printers
+- @printers.each do |printer|
+  %ul
+    %li= printer.shop_name
+
+=link_to "Home page", root_path
