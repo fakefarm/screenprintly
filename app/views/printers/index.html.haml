@@ -1,4 +1,7 @@
 %h1 Listing all printers
 - @printers.each do |printer|
   %ul
-    %li= printer.shop_name
+    %li
+      = printer.shop_name
+      \,
+      = printer.city.name
