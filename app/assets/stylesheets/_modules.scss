@@ -1,4 +1,4 @@
-.header{
+.container{
   @include outer-container();
   margin-top: 0;
 }
@@ -22,16 +22,19 @@
 
 .logo img{
   float: left;
-  width: 9.5%;
+  width: 8%;
   margin: 0 5% 0 0;
-}
-
-
-.wrap{
-  @include outer-container();
 }
 
 .wrap h1{
   margin: 0;
 }
 
+
+.field{
+  padding: 2% 0;
+  input{
+    padding: 2%;
+    font-size: 2em;
+  }
+}

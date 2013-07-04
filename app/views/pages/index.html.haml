@@ -1,5 +1,4 @@
 .wrap
-  .logo=image_tag 'logo.png'
   %h1 Need T-shirts?
 
 .spread
@@ -7,13 +6,10 @@
     %h2 Get quotes from local printers.
 
 .wrap
-  %h3 Available cities
+  %h3 Participating cities
   - @cities.each do |city|
     %ul
       %li
         *
         = city.name
-        (1 printers who will send you bids)
-.footer
-  =link_to 'List your shop', new_printer_path
-  =link_to 'Request your city', new_city_path
+        (8 printers wants to send you a bid!)

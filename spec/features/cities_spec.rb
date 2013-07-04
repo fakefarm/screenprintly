@@ -9,7 +9,7 @@ feature 'Managing cities' do
   end
 
   scenario 'Adding a city' do
-    visit cities_new_path
+    visit new_city_path
     page.should have_text("Enter new city name")
     fill_in 'Name', :with => 'Denver'
     click_button 'Create City'

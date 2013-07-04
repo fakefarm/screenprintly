@@ -3,7 +3,7 @@ require 'spec_helper'
 feature 'Printer' do
   scenario 'page exists' do
     visit new_printer_path
-    page.should have_text("Welcome!")
+    page.should have_text("List your shop!")
   end
 
   scenario 'creates an account' do
