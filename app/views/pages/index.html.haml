@@ -1,12 +1,9 @@
-.wrap
+.hero
   %h1 Need T-shirts?
+  %h2 Find the best screen printer
 
-.spread
-  .wrap
-    %h2 Get quotes from local printers
-
-.wrap
-  %h3 Participating cities
+.cities
+  %h3 Screen printers by city
   - @cities.each do |city|
     %ul
       %li= city.name
