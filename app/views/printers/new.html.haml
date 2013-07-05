@@ -1,5 +1,12 @@
 %h1 List your shop!
 =form_for @printer do |f|
+
+  - if @printer.errors.any?
+    .errors
+      %h4 Oops...
+      - @printer.errors.full_messages.each do |msg|
+        %p= msg
+
   .field
     = f.label :shop_name
     = f.text_field :shop_name

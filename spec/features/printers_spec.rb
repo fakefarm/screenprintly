@@ -13,12 +13,22 @@ feature 'Printer' do
     select 'Boulder', from: 'City'
     fill_in 'Contact name', with: 'dave woodall'
     fill_in 'Email', with: 'dave@screenprintly.com'
+    fill_in 'Address', with: '123 main st.'
+    fill_in 'Zipcode', with: '12345'
     click_button 'Create Printer'
     # page should redirect to printer show, with a flash that says 'success, you are now logged in!'
   end
 
-  scenario 'printer logs in'
-  scenario 'edits contact information'
-  scenario 'views contact information'
-  scenario 'approves contact information to be published'
+  scenario 'errors are displayed when content is invalid' do
+    visit new_printer_path
+    click_button 'Create Printer'
+    page.should have_text("Email can't be blank")
+    page.should have_text("Contact name can't be blank")
+    page.should have_text("Shop name can't be blank")
+    page.should have_text("Zipcode can't be blank")
+    page.should have_text("Address can't be blank")
+    page.should have_text("Phone can't be blank")
+  end
 end
+
+
