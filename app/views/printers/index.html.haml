@@ -2,6 +2,6 @@
 - @printers.each do |printer|
   %ul
     %li
-      = printer.shop_name
-      \,
+      = link_to printer.shop_name, printer_path(printer)
+
       = printer.city.name

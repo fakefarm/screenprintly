@@ -29,6 +29,9 @@ feature 'Printer' do
     page.should have_text("Address can't be blank")
     page.should have_text("Phone can't be blank")
   end
+
+  scenario 'can see their contact information' do
+  end
 end
 
 

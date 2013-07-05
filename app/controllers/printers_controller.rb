@@ -17,6 +17,7 @@ class PrintersController < ApplicationController
   end
 
   def show
+    @printer = Printer.find(params[:id])
   end
 
   def edit

@@ -1,2 +1,18 @@
-%h1 Printers#show
-%p Find me in app/views/printers/show.html.haml
+%h1= @printer.shop_name
+
+%p
+  City:
+  = @printer.city.name
+%p
+  Address:
+  = @printer.address
+%p
+  Contact Name:
+  = @printer.contact_name
+%p
+  Phone:
+  = @printer.phone
+%p
+  Email:
+  = mail_to @printer.email
+
