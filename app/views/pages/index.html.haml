@@ -6,4 +6,4 @@
   %h3 Screen printers by city
   - @cities.each do |city|
     %ul
-      %li= city.name
+      %li=link_to city.name, cities_path
