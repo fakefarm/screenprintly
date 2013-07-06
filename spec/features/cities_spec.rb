@@ -14,5 +14,6 @@ feature 'Managing cities' do
     fill_in 'Name', :with => 'Denver'
     click_button 'Create City'
     page.should have_text("List of cities")
+    page.should have_text("Denver")
   end
 end
