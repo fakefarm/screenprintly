@@ -3,6 +3,7 @@ Screenprintly::Application.routes.draw do
   root :to => 'pages#index'
   resources :cities
   resources :printers
+  resources :print_prices
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
