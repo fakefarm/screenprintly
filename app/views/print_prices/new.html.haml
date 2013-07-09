@@ -1,2 +1,28 @@
 %h1 Add a new price tier
-%p Find me in app/views/print_prices/new.html.haml
+
+= form_for @print_price do |f|
+  .entry
+    = f.label :min_print_qty
+    = f.select(:min_print_qty, options_for_select([1, 12, 24, 36, 48, 60, 72]))
+  .entry
+    = f.label :max_print_qty
+    = f.select(:max_print_qty, options_for_select([11, 23, 35, 47, 59, 71, 143]))
+  .entry
+    = f.label :pallet_type
+    = f.select(:pallet_type, options_for_select([['standard', 1],['oversize', 2],['jumbo', 3]]))
+  .entry
+    = f.label :ink_type
+    = f.select(:ink_type, options_for_select([['plastisol', 1],['waterbase', 2],['discharge', 3]]))
+  .entry
+    = f.label :base_color
+    = f.text_field :base_color
+  .entry
+    = f.label :one_color
+    = f.text_field :one_color
+  .entry
+    = f.label :two_color
+    = f.text_field :two_color
+  .entry
+    = f.label :three_color
+    = f.text_field :three_color
+    = f.submit  "Create price tier"
