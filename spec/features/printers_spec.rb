@@ -21,7 +21,9 @@ feature 'Printer' do
 
   scenario 'errors are displayed when content is invalid' do
     visit new_printer_path
+    build(:printer, email: nil, contact_name: nil, shop_name: nil, zipcode: nil, address: nil, phone: nil)
     click_button 'Create Printer'
+
     page.should have_text("Email can't be blank")
     page.should have_text("Contact name can't be blank")
     page.should have_text("Shop name can't be blank")
@@ -30,7 +32,12 @@ feature 'Printer' do
     page.should have_text("Phone can't be blank")
   end
 
-  scenario 'can see their contact information' do
+  scenario 'has a show page which display specific contact information' do
+    create(:city)
+    printer = create(:printer)
+    visit printers_path
+    visit printer_path(printer)
+    page.should have_text("screenprintly")
   end
 end
 
