@@ -6,10 +6,13 @@ gem 'pg'
 gem 'haml'
 gem "haml-rails"
 gem 'pry'
-gem 'awesome_print'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+group :development do
+  gem 'awesome_print', :require => 'ap'
+end
 
 
 group :development, :test do
