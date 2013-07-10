@@ -6,11 +6,13 @@ class PrintPricesController < ApplicationController
   end
 
   def new
+    @printer = 1
     @print_price = PrintPrice.new
   end
 
   def create
     @print_price = PrintPrice.create(params[:print_price])
+
     if @print_price.save
       redirect_to print_prices_path
     else
