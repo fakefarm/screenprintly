@@ -32,6 +32,9 @@ describe PrintPrice do
       expect(price.eight_color).to be_true
   end
 
-
-  it 'belongs to a printer'
+  it 'belongs to a printer' do
+    printer = create(:printer)
+    price = create(:print_price, printer_id: printer.id)
+    expect(price.printer.id).to be_kind_of(Integer)
+  end
 end
