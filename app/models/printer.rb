@@ -7,6 +7,7 @@ class Printer < ActiveRecord::Base
             :zipcode, :address, :phone, presence: true
 
   belongs_to :city
+  has_many :print_prices
 
   def pending?
     true
