@@ -59,6 +59,12 @@ h3.pallet-type{
  font-size: 1.5em;
 }
 
+tr:hover{
+  td{
+    background: #ffff66;
+  }
+}
+
 td, th{
   padding: 1%;
 }
