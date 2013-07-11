@@ -76,8 +76,15 @@ td{
   color: #0080ff;
   font-style: italic;
 }
-
-
+.button{
+  @include button;
+  margin-top: 3% 0;
+  a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+}
 
 
 
