@@ -1,22 +1,28 @@
 %h1 Add a new price tier
 
-= form_for @print_price do |f|
+= form_for [:printer, @print_price] do |f|
+
+  - if @print_price.errors.any?
+    .errors
+      %h4 Oops...
+      - @print_price.errors.full_messages.each do |msg|
+        %p= msg
   .entry
     = f.label :min_print_qty
     = f.select(:min_print_qty, options_for_select([1, 12, 24, 36, 48, 60, 72]))
 
 
-    = f.hidden_field :printer_id, value: @printer
+    = f.hidden_field :printer_id, value: @printer.id
 
   .entry
     = f.label :max_print_qty
     = f.select(:max_print_qty, options_for_select([11, 23, 35, 47, 59, 71, 143]))
   .entry
     = f.label :pallet_type
-    = f.select(:pallet_type, options_for_select([['standard', 1],['oversize', 2],['jumbo', 3]]))
+    = f.select(:pallet_type, options_for_select([['standard'],['oversize'],['jumbo']]))
   .entry
     = f.label :ink_type
-    = f.select(:ink_type, options_for_select([['plastisol', 1],['waterbase', 2],['discharge', 3]]))
+    = f.select(:ink_type, options_for_select([['plastisol'],['waterbase'],['4 color process'],['discharge']]))
   .entry
     = f.label :base_color
     = f.text_field :base_color
@@ -29,4 +35,20 @@
   .entry
     = f.label :three_color
     = f.text_field :three_color
+  .entry
+    = f.label :four_color
+    = f.text_field :four_color
+  .entry
+    = f.label :five_color
+    = f.text_field :five_color
+  .entry
+    = f.label :six_color
+    = f.text_field :six_color
+  .entry
+    = f.label :seven_color
+    = f.text_field :seven_color
+  .entry
+    = f.label :eight_color
+    = f.text_field :eight_color
+  .action
     = f.submit  "Create price tier"

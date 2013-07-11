@@ -6,15 +6,16 @@ class PrintPricesController < ApplicationController
   end
 
   def new
-    @printer = 1
     @print_price = PrintPrice.new
+    @printer = Printer.find(params[:printer_id])
   end
 
   def create
     @print_price = PrintPrice.create(params[:print_price])
+    @printer = Printer.find(params[:printer_id])
 
     if @print_price.save
-      redirect_to print_prices_path
+      redirect_to printer_path(@printer)
     else
       render 'new'
     end

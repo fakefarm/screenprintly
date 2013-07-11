@@ -15,7 +15,6 @@ feature 'Print pricing' do
     visit printer_path(printer)
     click_link 'Add a price tier'
     select('12', :from => 'Min print qty')
-    select('screenprintly', :from => 'Printer')
     select('23', :from => 'Max print qty')
     select('standard', :from => 'Pallet type')
     select('plastisol', :from => 'Ink type')
@@ -24,6 +23,6 @@ feature 'Print pricing' do
     fill_in "Two color", with: 234
     fill_in "Three color", with: 234
     click_button "Create price tier"
-    page.should have_text('PrintPrices#index')
+    page.should have_text(printer.shop_name)
   end
 end
