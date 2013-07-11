@@ -45,3 +45,43 @@
   margin: 3% 0;
 }
 
+.table-header{
+  border-top: 1px solid #e4e4e4;
+  margin-top: 2%;
+  overflow: auto;
+}
+
+h2.ink-type{
+  font-size: 2.3em;
+}
+
+h3.pallet-type{
+ font-size: 1.5em;
+}
+
+td, th{
+  padding: 1%;
+}
+
+td{
+  border-right: 1px solid #e4e4e4;
+  text-align: center;
+  &:last-child{
+    border-right: none;
+  }
+}
+
+.qty-range{
+  background: #e6e6e6;
+  color: #0080ff;
+  font-style: italic;
+}
+
+
+
+
+
+
+
+
+

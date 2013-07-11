@@ -1,0 +1,322 @@
+.table-header
+  %h2.ink-type Plastisol Ink
+  %h3.pallet-type Standard Pallet
+%table
+  %tr
+    %th Min
+    %th Max
+    %th Base
+    %th 1 color
+    %th 2 color
+    %th 3 color
+    %th 4 color
+    %th 5 color
+    %th 6 color
+    %th 7 color
+    %th 8 color
+  - @print_prices.each do |price|
+    - if price.ink_type == "plastisol" && price.pallet_type == "standard"
+      %tr
+        %td.qty-range= price.min_print_qty
+        %td.qty-range= price.max_print_qty
+        %td= price.base_color
+        %td= price.one_color
+        %td= price.two_color
+        %td= price.three_color
+        %td= price.four_color
+        %td= price.five_color
+        %td= price.six_color
+        %td= price.seven_color
+        %td= price.eight_color
+
+.table-header
+  %h3.pallet-type Oversize Pallet
+%table
+  %tr
+    %th Min
+    %th Max
+    %th Base
+    %th 1 color
+    %th 2 color
+    %th 3 color
+    %th 4 color
+    %th 5 color
+    %th 6 color
+    %th 7 color
+    %th 8 color
+  - @print_prices.each do |price|
+    - if price.ink_type == "plastisol" && price.pallet_type == "oversize"
+      %tr
+        %td.qty-range= price.min_print_qty
+        %td.qty-range= price.max_print_qty
+        %td= price.base_color
+        %td= price.one_color
+        %td= price.two_color
+        %td= price.three_color
+        %td= price.four_color
+        %td= price.five_color
+        %td= price.six_color
+        %td= price.seven_color
+        %td= price.eight_color
+
+.table-header
+  %h3.pallet-type Jumbo Pallet
+%table
+  %tr
+    %th Min
+    %th Max
+    %th Base
+    %th 1 color
+    %th 2 color
+    %th 3 color
+    %th 4 color
+    %th 5 color
+    %th 6 color
+    %th 7 color
+    %th 8 color
+  - @print_prices.each do |price|
+    - if price.ink_type == "plastisol" && price.pallet_type == "jumbo"
+      %tr
+        %td.qty-range= price.min_print_qty
+        %td.qty-range= price.max_print_qty
+        %td= price.base_color
+        %td= price.one_color
+        %td= price.two_color
+        %td= price.three_color
+        %td= price.four_color
+        %td= price.five_color
+        %td= price.six_color
+        %td= price.seven_color
+        %td= price.eight_color
+
+.table-header
+  %h2.ink-type Waterbase Ink
+  %h3.pallet-type Standard Pallet
+%table
+  %tr
+    %th Min
+    %th Max
+    %th Base
+    %th 1 color
+    %th 2 color
+    %th 3 color
+    %th 4 color
+    %th 5 color
+    %th 6 color
+    %th 7 color
+    %th 8 color
+  - @print_prices.each do |price|
+    - if price.ink_type == "waterbase" && price.pallet_type == "standard"
+      %tr
+        %td.qty-range= price.min_print_qty
+        %td.qty-range= price.max_print_qty
+        %td= price.base_color
+        %td= price.one_color
+        %td= price.two_color
+        %td= price.three_color
+        %td= price.four_color
+        %td= price.five_color
+        %td= price.six_color
+        %td= price.seven_color
+        %td= price.eight_color
+
+.table-header
+  %h3.pallet-type Oversize Pallet
+%table
+  %tr
+    %th Min
+    %th Max
+    %th Base
+    %th 1 color
+    %th 2 color
+    %th 3 color
+    %th 4 color
+    %th 5 color
+    %th 6 color
+    %th 7 color
+    %th 8 color
+  - @print_prices.each do |price|
+    - if price.ink_type == "waterbase" && price.pallet_type == "oversize"
+      %tr
+        %td.qty-range= price.min_print_qty
+        %td.qty-range= price.max_print_qty
+        %td= price.base_color
+        %td= price.one_color
+        %td= price.two_color
+        %td= price.three_color
+        %td= price.four_color
+        %td= price.five_color
+        %td= price.six_color
+        %td= price.seven_color
+        %td= price.eight_color
+
+.table-header
+  %h3.pallet-type Jumbo Pallet
+%table
+  %tr
+    %th Min
+    %th Max
+    %th Base
+    %th 1 color
+    %th 2 color
+    %th 3 color
+    %th 4 color
+    %th 5 color
+    %th 6 color
+    %th 7 color
+    %th 8 color
+  - @print_prices.each do |price|
+    - if price.ink_type == "waterbase" && price.pallet_type == "jumbo"
+      %tr
+        %td.qty-range= price.min_print_qty
+        %td.qty-range= price.max_print_qty
+        %td= price.base_color
+        %td= price.one_color
+        %td= price.two_color
+        %td= price.three_color
+        %td= price.four_color
+        %td= price.five_color
+        %td= price.six_color
+        %td= price.seven_color
+        %td= price.eight_color
+
+.table-header
+  %h2.ink-type 4 color process Ink
+  %h3.pallet-type Standard Pallet
+%table
+  %tr
+    %th Min
+    %th Max
+    %th Base
+    %th 4 color
+  - @print_prices.each do |price|
+    - if price.ink_type == "4 color process" && price.pallet_type == "standard"
+      %tr
+        %td.qty-range= price.min_print_qty
+        %td.qty-range= price.max_print_qty
+        %td= price.base_color
+        %td= price.four_color
+
+.table-header
+  %h3.pallet-type Oversize Pallet
+%table
+  %tr
+    %th Min
+    %th Max
+    %th Base
+    %th 4 color
+  - @print_prices.each do |price|
+    - if price.ink_type == "4 color process" && price.pallet_type == "oversize"
+      %tr
+        %td.qty-range= price.min_print_qty
+        %td.qty-range= price.max_print_qty
+        %td= price.base_color
+        %td= price.four_color
+
+
+.table-header
+  %h3.pallet-type Jumbo Pallet
+%table
+  %tr
+    %th Min
+    %th Max
+    %th Base
+    %th 4 color
+  - @print_prices.each do |price|
+    - if price.ink_type == "4 color process" && price.pallet_type == "jumbo"
+      %tr
+        %td.qty-range= price.min_print_qty
+        %td.qty-range= price.max_print_qty
+        %td= price.base_color
+        %td= price.four_color
+
+.table-header
+  %h2.ink-type Discharge Ink
+  %h3.pallet-type Standard Pallet
+%table
+  %tr
+    %th Min
+    %th Max
+    %th Base
+    %th 1 color
+    %th 2 color
+    %th 3 color
+    %th 4 color
+    %th 5 color
+    %th 6 color
+    %th 7 color
+    %th 8 color
+  - @print_prices.each do |price|
+    - if price.ink_type == "discharge" && price.pallet_type == "standard"
+      %tr
+        %td.qty-range= price.min_print_qty
+        %td.qty-range= price.max_print_qty
+        %td= price.base_color
+        %td= price.one_color
+        %td= price.two_color
+        %td= price.three_color
+        %td= price.four_color
+        %td= price.five_color
+        %td= price.six_color
+        %td= price.seven_color
+        %td= price.eight_color
+
+.table-header
+  %h3.pallet-type Oversize Pallet
+%table
+  %tr
+    %th Min
+    %th Max
+    %th Base
+    %th 1 color
+    %th 2 color
+    %th 3 color
+    %th 4 color
+    %th 5 color
+    %th 6 color
+    %th 7 color
+    %th 8 color
+  - @print_prices.each do |price|
+    - if price.ink_type == "discharge" && price.pallet_type == "oversize"
+      %tr
+        %td.qty-range= price.min_print_qty
+        %td.qty-range= price.max_print_qty
+        %td= price.base_color
+        %td= price.one_color
+        %td= price.two_color
+        %td= price.three_color
+        %td= price.four_color
+        %td= price.five_color
+        %td= price.six_color
+        %td= price.seven_color
+        %td= price.eight_color
+
+.table-header
+  %h3.pallet-type Jumbo Pallet
+%table
+  %tr
+    %th Min
+    %th Max
+    %th Base
+    %th 1 color
+    %th 2 color
+    %th 3 color
+    %th 4 color
+    %th 5 color
+    %th 6 color
+    %th 7 color
+    %th 8 color
+  - @print_prices.each do |price|
+    - if price.ink_type == "discharge" && price.pallet_type == "jumbo"
+      %tr
+        %td.qty-range= price.min_print_qty
+        %td.qty-range= price.max_print_qty
+        %td= price.base_color
+        %td= price.one_color
+        %td= price.two_color
+        %td= price.three_color
+        %td= price.four_color
+        %td= price.five_color
+        %td= price.six_color
+        %td= price.seven_color
+        %td= price.eight_color
