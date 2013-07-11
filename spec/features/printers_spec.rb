@@ -46,7 +46,7 @@ feature 'Printer' do
     print_price = create(:print_price, printer_id: printer.id)
     visit printer_path(printer)
     visit printer_path(printer)
-    page.should have_text("plastisol")
+    page.should have_text(printer.shop_name)
   end
 end
 
