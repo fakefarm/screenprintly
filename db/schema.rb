@@ -11,13 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130710153840) do
+ActiveRecord::Schema.define(:version => 20130715114506) do
 
   create_table "cities", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "name"
   end
+
+  create_table "garment_prices", :force => true do |t|
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "fabric"
+    t.string   "cut"
+    t.string   "quality"
+    t.string   "colors"
+    t.string   "inventory"
+    t.string   "brand"
+    t.string   "style_number"
+    t.integer  "price"
+    t.integer  "printer_id"
+  end
+
+  add_index "garment_prices", ["printer_id"], :name => "index_garment_prices_on_printer_id"
 
   create_table "print_prices", :force => true do |t|
     t.datetime "created_at",    :null => false

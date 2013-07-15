@@ -1,0 +1,30 @@
+%h1 Add a new garment
+= form_for @garment do |f|
+  .section
+    = f.label "brand"
+    = f.text_field :brand
+  .section
+    = f.label "style_number"
+    = f.text_field :style_number
+  .section
+    = f.label "fabric"
+    = f.select(:fabric, options_for_select(["100% cotton", "50/50 blend", "tri-blend", "slub cotton"]))
+  .section
+    = f.label "cut"
+    = f.select(:cut, options_for_select(["slim fit", "unstructured fit"]))
+  .section
+    = f.label "quality"
+    = f.select(:quality, options_for_select(["Premium", "Standard", "Closeout"]))
+  .section
+    = f.label "colors"
+    = f.text_field :colors
+  .section
+    = f.label "inventory levels"
+    = f.select(:inventory, options_for_select(["Stable", "Inconsistent"]))
+  .section
+    = f.label "price"
+    = f.text_field :price
+  .action
+    = f.submit
+
+
