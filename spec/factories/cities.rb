@@ -1,5 +1,6 @@
 FactoryGirl.define do
+
   factory :city do
-    name "Boulder"
+    sequence(:name) { |name| "#{name}"}
   end
 end

@@ -7,7 +7,7 @@ feature 'Printer' do
   end
 
   scenario 'creates an account' do
-    create(:city)
+    create(:city, name: "Boulder")
     visit new_printer_path
     fill_in 'Shop name', with: 'Screenprintly'
     select 'Boulder', from: 'City'
