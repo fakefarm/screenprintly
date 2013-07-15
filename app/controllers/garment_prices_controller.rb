@@ -1,12 +1,22 @@
 class GarmentPricesController < ApplicationController
 
-  def index; end
-  def new;
+  def index
+    @garment_prices = GarmentPrice.all
+  end
+
+  def new
     @garment = GarmentPrice.new
   end
 
   def create
-    @printer = Printer.find(params[:printer_id])
+    @garment = GarmentPrice.create(params[:garment_price])
+
+    if @garment.save
+      redirect_to garment_prices_path
+    else
+      render 'new'
+    end
+
   end
 
   def show; end

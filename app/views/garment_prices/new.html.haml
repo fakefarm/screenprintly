@@ -1,5 +1,15 @@
 %h1 Add a new garment
 = form_for @garment do |f|
+
+  - if @garment.errors.any?
+    .errors
+      %h4 Oops...
+      - @garment.errors.full_messages.each do |msg|
+        %p= msg
+
+  .section
+    = f.label "Printer"
+    = f.collection_select(:printer_id, Printer.all, :id, :shop_name)
   .section
     = f.label "brand"
     = f.text_field :brand
