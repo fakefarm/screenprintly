@@ -167,50 +167,6 @@
         %td= price.six_color
         %td= price.seven_color
         %td= price.eight_coQuantity
-.table-header
-  %h2.ink-type 4 color process Ink
-  %h3.pallet-type Standard Pallet
-%table
-  %tr
-    %th Min
-    %th Max
-    %th Base
-    %th 4 color
-  - @print_prices.each do |price|
-    - if price.ink_type == "4 color process" && price.pallet_type == "standard"
-      %tr
-        %td.qty-range= "#{price.min_print_qty} - #{price.max_print_qty}"
-        %td= price.base_coQuantity
-
-.table-header
-  %h3.pallet-type Oversize Pallet
-%table
-  %tr
-    %th Min
-    %th Max
-    %th Base
-    %th 4 color
-  - @print_prices.each do |price|
-    - if price.ink_type == "4 color process" && price.pallet_type == "oversize"
-      %tr
-        %td.qty-range= "#{price.min_print_qty} - #{price.max_print_qty}"
-        %td= price.base_color
-        %td= price.four_coQuantity
-
-.table-header
-  %h3.pallet-type Jumbo Pallet
-%table
-  %tr
-    %th Min
-    %th Max
-    %th Base
-    %th 4 color
-  - @print_prices.each do |price|
-    - if price.ink_type == "4 color process" && price.pallet_type == "jumbo"
-      %tr
-        %td.qty-range= "#{price.min_print_qty} - #{price.max_print_qty}"
-        %td= price.base_color
-        %td= price.four_color
 
 .table-header
   %h2.ink-type Discharge Ink

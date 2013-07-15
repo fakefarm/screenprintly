@@ -23,4 +23,8 @@ class PrintersController < ApplicationController
 
   def edit
   end
+
+  def printing_prices
+    @params = params
+  end
 end

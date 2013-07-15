@@ -39,15 +39,6 @@ feature 'Printer' do
     visit printer_path(printer)
     page.should have_text("screenprintly")
   end
-
-  scenario 'shows prices' do
-    create(:city)
-    printer = create(:printer)
-    print_price = create(:print_price, printer_id: printer.id)
-    visit printer_path(printer)
-    visit printer_path(printer)
-    page.should have_text(printer.shop_name)
-  end
 end
 
 
