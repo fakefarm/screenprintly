@@ -1,5 +1,5 @@
 %h1 Add a new garment
-= form_for @garment do |f|
+= form_for [:printer, @garment] do |f|
 
   - if @garment.errors.any?
     .errors
@@ -7,9 +7,8 @@
       - @garment.errors.full_messages.each do |msg|
         %p= msg
 
-  .section
-    = f.label "Printer"
-    = f.collection_select(:printer_id, Printer.all, :id, :shop_name)
+  = f.hidden_field :printer_id, value: @printer.id
+
   .section
     = f.label "brand"
     = f.text_field :brand

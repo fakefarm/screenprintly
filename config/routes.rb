@@ -3,7 +3,11 @@ Screenprintly::Application.routes.draw do
   root :to => 'pages#index'
   resources :cities
 
-  resources :garment_prices
+
+
+  resources :printers do
+    resources :garment_prices
+  end
 
   resources :printers do
     resources :print_prices

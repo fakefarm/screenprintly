@@ -7,12 +7,13 @@
       %h4 Oops...
       - @print_price.errors.full_messages.each do |msg|
         %p= msg
+
+
+  = f.hidden_field :printer_id, value: @printer.id
+
   .entry
     = f.label :min_print_qty
     = f.select(:min_print_qty, options_for_select([1, 12, 24, 36, 48, 60, 72]))
-
-
-    = f.hidden_field :printer_id, value: @printer.id
 
   .entry
     = f.label :max_print_qty

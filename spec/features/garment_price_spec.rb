@@ -12,8 +12,8 @@ feature 'GarmentPrice' do
   scenario 'fill out form for a new garment price' do
     city = create(:city)
     printer = create(:printer, city_id: city.id)
-    visit new_garment_price_path
-    select(printer.shop_name, from: 'garment_price_printer_id')
+    visit "/printers/#{printer.id}/" # named routes are not working...
+    click_link 'Add a garment'
     fill_in "Brand", with: "Hanes"
     fill_in "Style number", with: "3002"
     select('100% cotton', from: 'Fabric')
@@ -23,23 +23,6 @@ feature 'GarmentPrice' do
     select('Stable', from: 'garment_price_inventory')
     fill_in 'Price', with: 340
     click_button "Create Garment price"
-    page.should have_text('Listing Garments')
-  end
-
-  scenario 'listed on index' do
-    city = create(:city)
-    printer = create(:printer, city_id: city.id)
-    visit new_garment_price_path
-    select(printer.shop_name, from: 'garment_price_printer_id')
-    fill_in "Brand", with: "Hanes"
-    fill_in "Style number", with: "3002"
-    select('100% cotton', from: 'Fabric')
-    select('slim fit', from: 'Cut')
-    select('Premium', from: 'Quality')
-    fill_in 'Colors', with: 'blue, green, red'
-    select('Stable', from: 'garment_price_inventory')
-    fill_in 'Price', with: 340
-    click_button "Create Garment price"
-    page.should have_text('Hanes')
+    page.should have_text(printer.shop_name)
   end
 end

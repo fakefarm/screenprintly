@@ -17,5 +17,8 @@
   = mail_to @printer.email
 
 .button=link_to 'Add a price tier', new_printer_print_price_path(@printer)
-.button=link_to 'Add a garment',    new_garment_price_path
+.button=link_to 'Add a garment',    "/printers/#{params[:id]}/garment_prices/new"
 = render 'print_price_lists'
+= render 'garment_price_lists'
+
+
