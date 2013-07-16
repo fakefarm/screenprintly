@@ -1,0 +1,28 @@
+%h1 Garments
+.table-header
+  %h2.ink-type Inventory
+%table
+  %tr
+    %th Brand
+    %th Style Number
+    %th Price
+    %th Fabric
+    %th Cut
+    %th Quality
+    %th Colors
+    %th Inventory Levels
+    %th Printer
+
+  - @garment_prices.each do |price|
+    %tr
+      %td= price.brand
+      %td= price.style_number
+      %td= price.price
+      %td= price.fabric
+      %td= price.cut
+      %td= price.quality
+      %td= price.colors
+      %td= price.inventory
+      %td= price.printer.shop_name
+
+
