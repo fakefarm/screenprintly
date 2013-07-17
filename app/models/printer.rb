@@ -9,6 +9,7 @@ class Printer < ActiveRecord::Base
   belongs_to :city
   has_many :print_prices
   has_many :garment_prices
+  has_one  :printer_feature
 
   def pending?
     true

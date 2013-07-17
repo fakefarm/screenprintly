@@ -1,5 +1,23 @@
 %h1= @printer.shop_name
 
+%table
+  %tr
+    %th Free Shipping
+    %th Digital Proof
+    %th Hotline
+    %th Art team
+    %th Sample
+    %th Drop ship
+  %tr
+    - @features.each do |feature|
+      %td= feature.free_shipping
+      %td= feature.digital_proof
+      %td= feature.hotline
+      %td= feature.art_team
+      %td= feature.sample
+      %td= feature.drop_ship
+%hr
+
 %p
   City:
   = @printer.city.name
@@ -17,6 +35,7 @@
   = mail_to @printer.email
 
 .button=link_to 'Add a price tier', new_printer_print_price_path(@printer)
+.button=link_to 'Add a feature',  "/printers/#{params[:id]}/printer_features/new"
 .button=link_to 'Add a garment',    "/printers/#{params[:id]}/garment_prices/new"
 = render 'print_price_lists'
 = render 'garment_price_lists'

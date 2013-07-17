@@ -20,6 +20,7 @@ class PrintersController < ApplicationController
     @printer = Printer.find(params[:id])
     @print_prices = PrintPrice.where(printer_id: @printer)
     @garment_prices = GarmentPrice.where(printer_id: @printer)
+    @features = PrinterFeature.where(printer_id: @printer)
   end
 
   def edit

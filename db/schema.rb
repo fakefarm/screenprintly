@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130715114506) do
+ActiveRecord::Schema.define(:version => 20130717150127) do
 
   create_table "cities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -55,6 +55,20 @@ ActiveRecord::Schema.define(:version => 20130715114506) do
   end
 
   add_index "print_prices", ["printer_id"], :name => "index_print_prices_on_printer_id"
+
+  create_table "printer_features", :force => true do |t|
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.boolean  "free_shipping"
+    t.boolean  "digital_proof"
+    t.boolean  "hotline"
+    t.boolean  "art_team"
+    t.boolean  "sample"
+    t.boolean  "drop_ship"
+    t.integer  "printer_id"
+  end
+
+  add_index "printer_features", ["printer_id"], :name => "index_printer_features_on_printer_id"
 
   create_table "printers", :force => true do |t|
     t.datetime "created_at",   :null => false
