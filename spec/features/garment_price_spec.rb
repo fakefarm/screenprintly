@@ -12,7 +12,7 @@ feature 'GarmentPrice' do
   scenario 'fill out form for a new garment price' do
     city = create(:city)
     printer = create(:printer, city_id: city.id)
-    visit "/printers/#{printer.id}/" # named routes are not working...
+    visit printer_path(printer)
     click_link 'Add a garment'
     fill_in "Brand", with: "Hanes"
     fill_in "Style number", with: "3002"
