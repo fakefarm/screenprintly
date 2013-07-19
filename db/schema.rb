@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717150127) do
+ActiveRecord::Schema.define(:version => 20130719133612) do
 
   create_table "cities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -82,6 +82,9 @@ ActiveRecord::Schema.define(:version => 20130717150127) do
     t.boolean  "pending"
     t.string   "shop_name"
     t.integer  "city_id"
+    t.string   "slug"
   end
+
+  add_index "printers", ["slug"], :name => "index_printers_on_slug"
 
 end

@@ -7,12 +7,12 @@ class PrintPricesController < ApplicationController
 
   def new
     @print_price = PrintPrice.new
-    @printer = Printer.find(params[:printer_id])
+    @printer = Printer.find_by_slug(params[:printer_id])
   end
 
   def create
     @print_price = PrintPrice.create(params[:print_price])
-    @printer = Printer.find(params[:printer_id])
+    @printer = Printer.find_by_slug(params[:printer_id])
 
     if @print_price.save
       redirect_to printer_path(@printer)

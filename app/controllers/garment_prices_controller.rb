@@ -6,11 +6,11 @@ class GarmentPricesController < ApplicationController
 
   def new
     @garment = GarmentPrice.new
-    @printer = Printer.find(params[:printer_id])
+    @printer = Printer.find_by_slug(params[:printer_id])
   end
 
   def create
-    @printer = Printer.find(params[:printer_id])
+    @printer = Printer.find_by_slug(params[:printer_id])
     @garment = GarmentPrice.create(params[:garment_price])
 
     if @garment.save

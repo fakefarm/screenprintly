@@ -1,4 +1,7 @@
 class PrintersController < ApplicationController
+
+  before_filter :find_page, only: [:show, :edit, :update, :destroy]
+
   def index
     @printers = Printer.all
   end
@@ -17,7 +20,6 @@ class PrintersController < ApplicationController
   end
 
   def show
-    @printer = Printer.find(params[:id])
     @print_prices = PrintPrice.where(printer_id: @printer)
     @garment_prices = GarmentPrice.where(printer_id: @printer)
     @features = PrinterFeature.where(printer_id: @printer)
@@ -28,5 +30,10 @@ class PrintersController < ApplicationController
 
   def printing_prices
     @params = params
+  end
+
+private
+  def find_page
+    @printer = Printer.find_by_slug!(params[:id])
   end
 end
