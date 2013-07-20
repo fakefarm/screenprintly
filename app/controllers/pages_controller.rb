@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def index
-    @cities = City.find(:all)
+    @cities = City.order('name').all
   end
 end
