@@ -4,6 +4,8 @@ class CitiesController < ApplicationController
   end
 
   def show
+    @city = City.find(params[:id])
+    @printers = Printer.where(city_id: @city.id)
   end
 
   def new

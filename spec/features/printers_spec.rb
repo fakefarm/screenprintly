@@ -39,6 +39,35 @@ feature 'Printer' do
     visit printer_path(printer)
     page.should have_text("screenprintly")
   end
+
+  context 'organized by cities' do
+
+    scenario 'boulder only shows printers in boulder' do
+        boulder = create(:city, name: "Boulder")
+        denver = create(:city, name: "Denver")
+        visit cities_path
+        click_link "Boulder"
+        page.should have_text("Listing Boulder printers")
+    end
+
+    scenario 'has a list of printers in that city' do
+        boulder = create(:city, name: "Boulder")
+        printer = create(:printer, city: boulder)
+        visit cities_path
+        click_link "Boulder"
+        page.should have_text("screenprintly")
+    end
+
+    scenario 'the list of printers are links to printer show pages' do
+        boulder = create(:city, name: "Boulder")
+        printer = create(:printer, city: boulder)
+        visit cities_path
+        click_link "Boulder"
+        click_link "screenprintly"
+        page.should have_text(printer.shop_name)
+
+    end
+  end
 end
 
 
