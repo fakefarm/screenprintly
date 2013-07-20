@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130720150700) do
+ActiveRecord::Schema.define(:version => 20130720151605) do
 
   create_table "cities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -20,14 +20,14 @@ ActiveRecord::Schema.define(:version => 20130720150700) do
   end
 
   create_table "finishing_services", :force => true do |t|
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.boolean  "printed_labels"
     t.boolean  "woven_labels"
     t.boolean  "folding_bagging"
     t.boolean  "hang_tags"
     t.boolean  "fulfillment"
-    t.integer  "printer_id",      :limit => 255
+    t.integer  "printer_id"
   end
 
   add_index "finishing_services", ["printer_id"], :name => "index_finishing_services_on_printer_id"
