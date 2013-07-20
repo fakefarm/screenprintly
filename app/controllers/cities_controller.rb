@@ -1,13 +1,12 @@
 class CitiesController < ApplicationController
+  before_filter :find_city, only: [:show, :edit, :update, :destroy]
+
   def index
     @cities = City.order('name').all
-
   end
 
   def show
-    @city = City.find(params[:id])
-
-    @printers = Printer.where(city_id: @city.id)
+    @printers = Printer.where(city_id: @city)
     @printers = @printers.sort.reverse
   end
 
@@ -25,5 +24,10 @@ class CitiesController < ApplicationController
   end
 
   def edit
+  end
+
+private
+  def find_city
+    @city = City.find_by_slug!(params[:id])
   end
 end
