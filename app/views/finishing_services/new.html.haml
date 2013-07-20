@@ -1,0 +1,22 @@
+%h1 New Finishing service
+= form_for [:printer, @finishing] do |f|
+
+  = f.hidden_field :printer_id, value: @printer.id
+
+  .field
+    = f.check_box :printed_labels
+    = f.label :printed_labels
+  .field
+    = f.check_box :woven_labels
+    = f.label :woven_labels
+  .field
+    = f.check_box :folding_bagging
+    = f.label :folding_bagging
+  .field
+    = f.check_box :hang_tags
+    = f.label :hang_tags
+  .field
+    = f.check_box :fulfillment
+    = f.label :fulfillment
+  .field
+    = f.submit

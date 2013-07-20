@@ -2,6 +2,24 @@
 
 %table
   %thead
+    %p Finishing services
+  %tr
+    %th Printed labels
+    %th Woven Labels
+    %th Folding & Bagging
+    %th Hang Tags
+    %th Fullfilment
+    - @finishing.each do |finish|
+      %tr
+        %td= finish.printed_labels
+        %td= finish.woven_labels
+        %td= finish.folding_bagging
+        %td= finish.hang_tags
+        %td= finish.fulfillment
+%hr
+
+%table
+  %thead
     %p Printer features
   %tr
     %th Free Shipping
@@ -39,6 +57,7 @@
 .button=link_to 'Add a price tier', new_printer_print_price_path(@printer)
 .button=link_to 'Add a feature',    new_printer_printer_feature_path(@printer)
 .button=link_to 'Add a garment',    new_printer_garment_price_path(@printer)
+.button=link_to 'Add a finishing service',  new_printer_finishing_service_path(@printer)
 = render 'print_price_lists'
 = render 'garment_price_lists'
 

@@ -1,5 +1,7 @@
 Screenprintly::Application.routes.draw do
 
+  get "finishing_services/new"
+
   root :to => 'pages#index'
   resources :cities
 
@@ -7,6 +9,7 @@ Screenprintly::Application.routes.draw do
     resources :garment_prices
     resources :print_prices
     resources :printer_features
+    resources :finishing_services
   end
 
 
