@@ -54,6 +54,8 @@
   Email:
   = mail_to @printer.email
 
+= link_to 'Edit info', edit_printer_path(@printer)
+%hr
 .button=link_to 'Add a price tier', new_printer_print_price_path(@printer)
 .button=link_to 'Add a feature',    new_printer_printer_feature_path(@printer)
 .button=link_to 'Add a garment',    new_printer_garment_price_path(@printer)

@@ -29,6 +29,14 @@ class PrintersController < ApplicationController
   def edit
   end
 
+  def update
+    if @printer.update_attributes(params[:printer])
+      redirect_to printer_path(@printer)
+    else
+      'edit'
+    end
+  end
+
   def printing_prices
     @params = params
   end

@@ -1,2 +1,29 @@
-%h1 Printers#edit
-%p Find me in app/views/printers/edit.html.haml
+%h1 Edit your information
+=form_for @printer do |f|
+
+  - if @printer.errors.any?
+    .errors
+      %h4 Oops...
+      - @printer.errors.full_messages.each do |msg|
+        %p= msg
+
+  .field
+    = f.label :city_id
+    = f.collection_select :city_id, City.all, :id, :name
+  .field
+    = f.label :contact_name
+    = f.text_field :contact_name
+  .field
+    = f.label :email
+    = f.text_field :email
+  .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
+    = f.label :address
+    = f.text_field :address
+  .field
+    = f.label :zipcode
+    = f.text_field :zipcode
+  .action
+    = f.submit

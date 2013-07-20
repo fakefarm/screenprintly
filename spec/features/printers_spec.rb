@@ -40,6 +40,18 @@ feature 'Printer' do
     page.should have_text("screenprintly")
   end
 
+
+  context 'can update' do
+    scenario ' basic information' do
+        printer = create :printer
+        visit printer_path printer
+        click_link 'Edit info'
+        page.should have_text("Edit your information")
+        click_button 'Update Printer'
+        page.should have_text(printer.shop_name)
+    end
+
+  end
   context 'organized by cities' do
 
     scenario 'boulder only shows printers in boulder' do
