@@ -26,8 +26,8 @@ h2 {
 }
 
 h3 {
-  font-size: 3em;
-  font-weight: 700;
+  font-size: 2em;
+  font-weight: 300;
 }
 
 h4, li {
@@ -60,3 +60,13 @@ table{
     color: $red;
   }
 }
+
+a{
+  color: $blue;
+  text-decoration: none;
+  font-family: $serif;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
