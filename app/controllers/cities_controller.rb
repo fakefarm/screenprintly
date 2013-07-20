@@ -1,11 +1,14 @@
 class CitiesController < ApplicationController
   def index
-    @cities = City.all
+    @cities = City.order('name').all
+
   end
 
   def show
     @city = City.find(params[:id])
+
     @printers = Printer.where(city_id: @city.id)
+    @printers = @printers.sort.reverse
   end
 
   def new
