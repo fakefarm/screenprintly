@@ -1,0 +1,24 @@
+.printer-nav{
+  ul{
+    text-align: right;
+  }
+  li{
+    font-size: 1em;
+    display: inline-block;
+    padding: 0 1%;
+  }
+  a{
+    font-family: $sans;
+  }
+}
+
+.printer-head{
+  @include row();
+}
+
+.printer-column{
+  @include span-columns(4);
+  h2{
+    font-size: 2em;
+  }
+}
