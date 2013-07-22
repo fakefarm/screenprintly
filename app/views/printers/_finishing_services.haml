@@ -1,0 +1,9 @@
+%h2 Finishing services
+%ul
+- @finishing.each do |finish|
+  %li= "Printed labels" if finish.printed_labels
+  %li= "Woven Labels" if finish.woven_labels
+  %li= "Folding & Bagging" if finish.folding_bagging
+  %li= "Hang Tags" if finish.hang_tags
+  %li= "Fullfilment" if finish.fulfillment
+%hr

@@ -1,0 +1,11 @@
+%h2 Printer features
+%ul
+- @features.each do |feature|
+  %li= "Free Shipping" if feature.free_shipping
+  %li= "Digital Proof" if feature.digital_proof
+  %li= "Hotline" if feature.hotline
+  %li= "Art team" if feature.art_team
+  %li= "Sample" if feature.sample
+  %li= "Drop ship" if feature.drop_ship
+
+%hr

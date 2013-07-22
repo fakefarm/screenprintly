@@ -1,42 +1,7 @@
 %h1= @printer.shop_name
 
-%table
-  %thead
-    %p Finishing services
-  %tr
-    %th Printed labels
-    %th Woven Labels
-    %th Folding & Bagging
-    %th Hang Tags
-    %th Fullfilment
-    - @finishing.each do |finish|
-      %tr
-        %td= finish.printed_labels
-        %td= finish.woven_labels
-        %td= finish.folding_bagging
-        %td= finish.hang_tags
-        %td= finish.fulfillment
-%hr
-
-%table
-  %thead
-    %p Printer features
-  %tr
-    %th Free Shipping
-    %th Digital Proof
-    %th Hotline
-    %th Art team
-    %th Sample
-    %th Drop ship
-    - @features.each do |feature|
-      %tr
-        %td= feature.free_shipping
-        %td= feature.digital_proof
-        %td= feature.hotline
-        %td= feature.art_team
-        %td= feature.sample
-        %td= feature.drop_ship
-%hr
+= render 'finishing_services'
+= render 'printer_features'
 
 %p
   City:
