@@ -6,8 +6,7 @@ class CitiesController < ApplicationController
   end
 
   def show
-    @printers = Printer.where(city_id: @city)
-    @printers = @printers.sort.reverse
+    @printers = Printer.where(city_id: @city).sort.reverse
   end
 
   def new

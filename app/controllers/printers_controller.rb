@@ -1,6 +1,6 @@
 class PrintersController < ApplicationController
 
-  before_filter :find_page, only: [:show, :edit, :update, :destroy]
+  before_filter :find_printer, only: [:show, :edit, :update, :destroy]
 
   def index
     @printers = Printer.all
@@ -13,7 +13,7 @@ class PrintersController < ApplicationController
   def create
     @printer = Printer.new(params[:printer])
     if @printer.save
-      redirect_to printers_path
+      redirect_to printer_path(@printer)
     else
       render new_printer_path
     end
@@ -42,7 +42,7 @@ class PrintersController < ApplicationController
   end
 
 private
-  def find_page
+  def find_printer
     @printer = Printer.find_by_slug!(params[:id])
   end
 end
