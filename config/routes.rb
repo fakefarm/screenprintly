@@ -1,5 +1,7 @@
 Screenprintly::Application.routes.draw do
 
+  resources :quotes
+
   get "finishing_services/new"
 
   root :to => 'pages#index'
