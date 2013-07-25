@@ -1,7 +1,16 @@
 %h1 Listing printers
 %h2
   Quantity
-  =@search.quanity
+  =@quote.quantity
 %h2
   Number of colors
-  =@search.number_of_colors
+  =@quote.number_of_colors
+
+%h2 Printers
+%table
+  %tr
+    %th Name
+    %th Price
+  - @prices.each do |price|
+    %tr
+      %td= price.printer.shop_name
