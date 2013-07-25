@@ -6,7 +6,7 @@ Screenprintly::Application.routes.draw do
 
   root :to => 'pages#index'
   resources :cities, only: [:index, :new, :create]
-  resources :cities, path: "", except: [:index, :new, :create]
+  resources :cities, path: "/screen-printers-in", except: [:index, :new, :create]
 
   resources :printers do
     resources :garment_prices
