@@ -8,19 +8,15 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new(params[:quote])
     if @quote.save
-    redirect_to search_path(@search)
+    redirect_to quote_path(@quote)
     else
       render 'new'
     end
   end
 
   def show
-    @search = Quote.find(params[:id])
-    #=> id: 1, numb_of_colrs: 3, quantity: 50
-
+    @quote = Quote.find(params[:id])
+    @prices = PrintPrice.all
+    # I'm thinking of making a quoteQuery model that is initialized with the parameters of the quote. The Query will then convert the object into a query of printPrices using the initialized object's refined search to find the right price.
   end
-
 end
-
-# Min qty < quantity < Max qty
-# = > printers, whose price tier is inside this qty range, filter out to only show the color requested, sort asc.

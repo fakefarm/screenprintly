@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'search' do
+feature Quote do
   it 'is performed with a quantity and number of colors' do
     jak_prints = create(:printer, shop_name: "jak prints" )
     garment_gear = create(:printer, shop_name: "garment gear")
@@ -9,11 +9,10 @@ feature 'search' do
     garment_prices = create(:print_price, printer_id: garment_gear.id)
     future_prices = create(:print_price, one_color: 33, printer_id: future_shirts.id)
 
-    visit new_search_path
-
-    fill_in 'Quantity', with: 15
-    fill_in 'Number of colors', with: 1
-    click_button 'quote'
+    visit new_quote_path
+    fill_in 'quote_quantity', with: 15
+    fill_in 'quote_number_of_colors', with: 1
+    click_button 'Create Quote'
     page.should have_text("Listing printers")
     page.should have_text('garment gear')
   end
