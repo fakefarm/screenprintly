@@ -25,6 +25,6 @@ feature 'Printer feature' do
     check('Free shipping')
     click_button "Create Printer feature"
     page.should have_text("Printer features")
-    page.should have_text("true")
+    page.should have_text("Free Shipping")
   end
 end

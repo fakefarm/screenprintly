@@ -24,6 +24,6 @@ feature 'Finishing Service' do
     check('Printed labels')
     click_button "Create Finishing service"
     page.should have_text("Finishing services")
-    page.should have_text("true")
+    page.should have_text("Printed labels")
   end
 end
