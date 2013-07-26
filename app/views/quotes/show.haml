@@ -7,10 +7,17 @@
   =@quote.number_of_colors
 
 %h2 Printers
-%table
-  %tr
-    %th Name
-    %th Price
-  - @prices.each do |price|
+- if @prices.empty?
+  %h1 Sorry, no printers match.
+  %h2= link_to "Try again!", new_quote_path
+-else
+  %table
     %tr
-      %td= price.printer.shop_name
+      %th Name
+      %th Price
+      %th City
+    - @prices.each do |price|
+      %tr
+        %td= price.printer.shop_name
+        %td= price.send(@quote.number_of_colors)
+        %td= price.printer.city.name

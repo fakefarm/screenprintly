@@ -97,5 +97,33 @@ td{
 }
 
 
+table.new-print-price{
+  input{
+    width: 70px;
+  }
+  tr:hover{
+    background: none;
+  }
+}
 
+.two-grid{
+  @include row();
+  .cities{
+    @include span-columns(5);
+  }
+  .quote{
+    @include span-columns(6);
+    background: $money;
+    border: 1px solid $green;
+    margin: 5% 0;
+    padding: 5%;
+    text-align: center;
+    a{
+      font-family: $sans;
+      font-weight: bold;
+      font-size: 2em;
+      color: $green;
+    }
+  }
+}
 
