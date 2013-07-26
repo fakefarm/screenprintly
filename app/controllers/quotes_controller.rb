@@ -16,7 +16,7 @@ class QuotesController < ApplicationController
 
   def show
     @quote = Quote.find(params[:id])
-    @prices = PrintPrice.all
-    # I'm thinking of making a quoteQuery model that is initialized with the parameters of the quote. The Query will then convert the object into a query of printPrices using the initialized object's refined search to find the right price.
+    qty = @quote.quantity
+    @prices = PrintPrice.where(price_tier: @quote.quote_quantity(qty))
   end
 end
