@@ -1,5 +1,5 @@
 module PrintersHelper
-  def price_tiers(tier)
+  def quantity_tiers(tier)
     case tier
     when 1
       "1 - 11"
