@@ -10,10 +10,12 @@ feature Quote do
     future_prices = create(:print_price, one_color: 33, printer_id: future_shirts.id)
 
     visit new_quote_path
-    fill_in 'quote_quantity', with: 15
-    fill_in 'quote_number_of_colors', with: 1
+    fill_in 'Quantity', with: 15
+    select '1 color', from: 'quote_number_of_colors'
+
     click_button 'Create Quote'
     page.should have_text("Listing printers")
     page.should have_text('garment gear')
+    page.should have_text('23')
   end
 end
