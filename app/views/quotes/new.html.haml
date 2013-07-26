@@ -5,7 +5,8 @@
     = f.text_field 'quantity'
   %p
     = f.label 'Number of colors'
-    = f.text_field 'number_of_colors'
+    = f.select(:number_of_colors, options_for_select(color_options))
 
   .submit
     = f.submit
+
