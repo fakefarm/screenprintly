@@ -17,7 +17,7 @@
   - @print_prices.each do |price|
     - if price.ink_type == "plastisol" && price.pallet_type == "standard"
       %tr
-        %td.qty-range= "#{price.min_print_qty} - #{price.max_print_qty}"
+        %td= price_tiers(price.price_tier)
         %td= price.base_color
         %td= price.one_color
         %td= price.two_color
@@ -45,7 +45,7 @@
   - @print_prices.each do |price|
     - if price.ink_type == "plastisol" && price.pallet_type == "oversize"
       %tr
-        %td.qty-range= "#{price.min_print_qty} - #{price.max_print_qty}"
+        %td= price_tiers(price.price_tier)
         %td= price.base_color
         %td= price.one_color
         %td= price.two_color
@@ -73,7 +73,7 @@
   - @print_prices.each do |price|
     - if price.ink_type == "plastisol" && price.pallet_type == "jumbo"
       %tr
-        %td.qty-range= "#{price.min_print_qty} - #{price.max_print_qty}"
+        %td= price_tiers(price.price_tier)
         %td= price.base_color
         %td= price.one_color
         %td= price.two_color
@@ -102,7 +102,7 @@
   - @print_prices.each do |price|
     - if price.ink_type == "waterbase" && price.pallet_type == "standard"
       %tr
-        %td.qty-range= "#{price.min_print_qty} - #{price.max_print_qty}"
+        %td= price_tiers(price.price_tier)
         %td= price.base_color
         %td= price.one_color
         %td= price.two_color
@@ -130,7 +130,7 @@
   - @print_prices.each do |price|
     - if price.ink_type == "waterbase" && price.pallet_type == "oversize"
       %tr
-        %td.qty-range= "#{price.min_print_qty} - #{price.max_print_qty}"
+        %td= price_tiers(price.price_tier)
         %td= price.base_color
         %td= price.one_color
         %td= price.two_color
@@ -158,7 +158,7 @@
   - @print_prices.each do |price|
     - if price.ink_type == "waterbase" && price.pallet_type == "jumbo"
       %tr
-        %td.qty-range= "#{price.min_print_qty} - #{price.max_print_qty}"
+        %td= price_tiers(price.price_tier)
         %td= price.base_color
         %td= price.one_color
         %td= price.two_color
@@ -187,7 +187,7 @@
   - @print_prices.each do |price|
     - if price.ink_type == "discharge" && price.pallet_type == "standard"
       %tr
-        %td.qty-range= "#{price.min_print_qty} - #{price.max_print_qty}"
+        %td= price_tiers(price.price_tier)
         %td= price.base_color
         %td= price.one_color
         %td= price.two_color
@@ -215,7 +215,7 @@
   - @print_prices.each do |price|
     - if price.ink_type == "discharge" && price.pallet_type == "oversize"
       %tr
-        %td.qty-range= "#{price.min_print_qty} - #{price.max_print_qty}"
+        %td= price_tiers(price.price_tier)
         %td= price.base_color
         %td= price.one_color
         %td= price.two_color
@@ -243,7 +243,7 @@
   - @print_prices.each do |price|
     - if price.ink_type == "discharge" && price.pallet_type == "jumbo"
       %tr
-        %td.qty-range= "#{price.min_print_qty} - #{price.max_print_qty}"
+        %td= price_tiers(price.price_tier)
         %td= price.base_color
         %td= price.one_color
         %td= price.two_color
