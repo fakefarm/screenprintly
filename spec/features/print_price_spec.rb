@@ -13,8 +13,7 @@ feature 'Print pricing' do
     printer = create(:printer)
     visit printer_path(printer)
     click_link 'Add a price tier'
-    select('12', :from => 'Min print qty')
-    select('23', :from => 'Max print qty')
+    select('1 - 11', :from => 'print_price_price_tier')
     select('standard', :from => 'Pallet type')
     select('plastisol', :from => 'Ink type')
     fill_in "Base color", with: 234

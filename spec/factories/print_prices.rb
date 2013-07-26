@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :print_price do
-    min_print_qty 12
-    max_print_qty 23
+    price_tier 2
     pallet_type "standard"
     ink_type "plastisol"
     base_color 23

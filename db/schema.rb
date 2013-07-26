@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130725152544) do
+ActiveRecord::Schema.define(:version => 20130726145403) do
 
   create_table "cities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -52,10 +52,8 @@ ActiveRecord::Schema.define(:version => 20130725152544) do
   add_index "garment_prices", ["printer_id"], :name => "index_garment_prices_on_printer_id"
 
   create_table "print_prices", :force => true do |t|
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.integer  "min_print_qty"
-    t.integer  "max_print_qty"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "pallet_type"
     t.string   "ink_type"
     t.integer  "base_color"
@@ -68,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20130725152544) do
     t.integer  "seven_color"
     t.integer  "eight_color"
     t.integer  "printer_id"
+    t.string   "price_tier"
   end
 
   add_index "print_prices", ["printer_id"], :name => "index_print_prices_on_printer_id"
@@ -105,7 +104,7 @@ ActiveRecord::Schema.define(:version => 20130725152544) do
 
   create_table "quotes", :force => true do |t|
     t.integer  "quantity"
-    t.integer  "number_of_colors"
+    t.string   "number_of_colors"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end

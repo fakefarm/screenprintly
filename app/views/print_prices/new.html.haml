@@ -12,44 +12,37 @@
   = f.hidden_field :printer_id, value: @printer.id
 
   .entry
-    = f.label :min_print_qty
-    = f.select(:min_print_qty, options_for_select([1, 12, 24, 36, 48, 60, 72]))
-
-  .entry
-    = f.label :max_print_qty
-    = f.select(:max_print_qty, options_for_select([11, 23, 35, 47, 59, 71, 143]))
+    = f.label :price_tier
+    = f.select(:price_tier, options_for_select(price_tiers))
   .entry
     = f.label :pallet_type
     = f.select(:pallet_type, options_for_select([['standard'],['oversize'],['jumbo']]))
   .entry
     = f.label :ink_type
     = f.select(:ink_type, options_for_select([['plastisol'],['waterbase'],['4 color process'],['discharge']]))
-  .entry
-    = f.label :base_color
-    = f.text_field :base_color
-  .entry
-    = f.label :one_color
-    = f.text_field :one_color
-  .entry
-    = f.label :two_color
-    = f.text_field :two_color
-  .entry
-    = f.label :three_color
-    = f.text_field :three_color
-  .entry
-    = f.label :four_color
-    = f.text_field :four_color
-  .entry
-    = f.label :five_color
-    = f.text_field :five_color
-  .entry
-    = f.label :six_color
-    = f.text_field :six_color
-  .entry
-    = f.label :seven_color
-    = f.text_field :seven_color
-  .entry
-    = f.label :eight_color
-    = f.text_field :eight_color
+
+  %p Enter what print colors you offer. If you don't offer a color at this price tier, you can leave the field blank.
+  %table.new-print-price
+    %tr
+      %th= f.label :base_color
+      %th= f.label :one_color
+      %th= f.label :two_color
+      %th= f.label :three_color
+      %th= f.label :four_color
+      %th= f.label :five_color
+      %th= f.label :six_color
+      %th= f.label :seven_color
+      %th= f.label :eight_color
+    %tr
+      %td= f.text_field :base_color
+      %td= f.text_field :one_color
+      %td= f.text_field :two_color
+      %td= f.text_field :three_color
+      %td= f.text_field :four_color
+      %td= f.text_field :five_color
+      %td= f.text_field :six_color
+      %td= f.text_field :seven_color
+      %td= f.text_field :eight_color
+
   .action
     = f.submit  "Create price tier"

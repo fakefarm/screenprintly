@@ -1,13 +1,6 @@
 require 'spec_helper'
 
 describe PrintPrice do
-  it 'has a minimum and maximum value' do
-    price = PrintPrice.create(min_print_qty: 12, max_print_qty: 23)
-    expect(price.range.include?(20)).to be_true
-    expect(price.range.include?(11)).to be_false
-    expect(price.range.include?(24)).to be_false
-  end
-
   it 'has a pallet size' do
     price = PrintPrice.create(pallet_type: 'standard')
     expect(price.pallet_type).not_to be_nil
