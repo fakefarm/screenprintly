@@ -28,23 +28,42 @@
   .field
     %h2= f.label :overview
     %p Welcome content
-    = f.text_area :overview
+    = f.text_area :overview, :cols => "90", :rows => "10"
   .field
     %h2= f.label :about
     %p History, owners, or other interesting facts.
-    = f.text_area :about
+    = f.text_area :about, :cols => "90", :rows => "10"
   .field
     %h2= f.label :customer_service
     %p Describe your customer service philosophies
-    = f.text_area :customer_service
+    = f.text_area :customer_service, :cols => "90", :rows => "10"
   .field
     %h2= f.label :services
     %p Describe the services you offer
-    = f.text_area :services
+    = f.text_area :services, :cols => "90", :rows => "10"
   .field
     %h2= f.label :terms
     %p What are your company terms and conditions?
-    = f.text_area :terms
+    = f.text_area :terms, :cols => "90", :rows => "10"
 
   .action
     = f.submit
+
+
+.formatting-help
+  %h4 Want headers?
+  %p Put a '#' before your title.
+  %p Examples;
+  %ul
+    %li
+      \# Header 1
+      is
+      %h1 Header 1
+    %li
+      \## Header 2
+      is
+      %h2 Header 2
+    %li
+      \### Header 3
+      is
+      %h3 Header 3

@@ -1,4 +1,5 @@
 .printer-sheet{
+  position: relative;
   background: white;
   padding: 1% 4%;
   margin: 1% 0 2%;
@@ -41,5 +42,31 @@
   }
   p{
     line-height: 28px;
+  }
+}
+
+.formatting-help{
+  position: absolute;
+  top: 606px;
+  right: 40px;
+  border: 1px solid #aaa;
+  background: #e4e4e4;
+  width: 325px;
+  padding: 1%;
+  h1, h2, h3, h4, p, ul, li{
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+  }
+  h1, h2, h3{
+    display: inline;
+  }
+  h4{
+    font-weight: bold;
+  }
+  p{
+    font-style: italic;
+    margin-bottom: 5px;
+    color: #7e7e7e;
   }
 }
