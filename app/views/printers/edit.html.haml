@@ -8,22 +8,43 @@
         %p= msg
 
   .field
-    = f.label :city_id
+    %h2= f.label :city_id
     = f.collection_select :city_id, City.all, :id, :name
   .field
-    = f.label :contact_name
+    %h2= f.label :contact_name
     = f.text_field :contact_name
   .field
-    = f.label :email
+    %h2= f.label :email
     = f.text_field :email
   .field
-    = f.label :phone
+    %h2= f.label :phone
     = f.text_field :phone
   .field
-    = f.label :address
+    %h2= f.label :address
     = f.text_field :address
   .field
-    = f.label :zipcode
+    %h2= f.label :zipcode
     = f.text_field :zipcode
+  .field
+    %h2= f.label :overview
+    %p Welcome content
+    = f.text_area :overview
+  .field
+    %h2= f.label :about
+    %p History, owners, or other interesting facts.
+    = f.text_area :about
+  .field
+    %h2= f.label :customer_service
+    %p Describe your customer service philosophies
+    = f.text_area :customer_service
+  .field
+    %h2= f.label :services
+    %p Describe the services you offer
+    = f.text_area :services
+  .field
+    %h2= f.label :terms
+    %p What are your company terms and conditions?
+    = f.text_area :terms
+
   .action
     = f.submit

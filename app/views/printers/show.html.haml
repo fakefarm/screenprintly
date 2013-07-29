@@ -1,36 +1,34 @@
-.printer-nav
-  %ul
-    %li= link_to 'Edit info', edit_printer_path(@printer)
-    %li= link_to 'Add a price tier', new_printer_print_price_path(@printer)
-    %li= link_to 'Add a feature',    new_printer_printer_feature_path(@printer)
-    %li= link_to 'Add a garment',    new_printer_garment_price_path(@printer)
-    %li= link_to 'Add a finishing service',  new_printer_finishing_service_path(@printer)
-
-
 %h1= @printer.shop_name
+%h2= @printer.city.name
+.printer-copy
+  %p= markdown(@printer.overview) unless @printer.overview.nil?
+
 %hr
 .printer-head
   .printer-column
     %h2 Contact info
-    %p
-      City:
-      = @printer.city.name
-    %p
-      Address:
-      = @printer.address
-    %p
-      Contact Name:
-      = @printer.contact_name
-    %p
-      Phone:
-      = @printer.phone
-    %p
-      Email:
-      = mail_to @printer.email
+    %h3= @printer.contact_name
+    %h3= @printer.phone
+    %h3= mail_to @printer.email
+    %h5= @printer.address
+
   .printer-column
     = render 'printer_features'
   .printer-column
     = render 'finishing_services'
+%hr
+%h2 About
+.printer-copy
+  %p= markdown(@printer.about) unless @printer.about.nil?
+%h2 Customer Service
+.printer-copy
+  %p= markdown(@printer.customer_service) unless @printer.customer_service.nil?
+%h2 Services
+.printer-copy
+  %p= markdown(@printer.services) unless @printer.services.nil?
+%h2 Terms
+.printer-copy
+  %p= markdown(@printer.terms) unless @printer.terms.nil?
 
 = render 'print_price_lists'
 = render 'garment_price_lists'

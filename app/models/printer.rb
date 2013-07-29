@@ -1,7 +1,8 @@
 class Printer < ActiveRecord::Base
 
   attr_accessible :email, :contact_name, :address, :zipcode,
-                  :phone, :pending, :shop_name, :city_id, :slug
+                  :phone, :pending, :shop_name, :city_id, :slug,
+                  :overview, :about, :customer_service, :services, :terms
 
   validates :email, :contact_name, :shop_name, :city_id,
             :zipcode, :address, :phone, presence: true
