@@ -1,13 +1,8 @@
 .hero
   %h1 Need T-shirts?
-  %h2 Find the cheapest, closest, or best screen printer for you.
-
-.two-grid
-  .cities
-    %h3.air Screen printers by city
-    - @cities.each do |city|
-      %ul
-        %li=link_to city.name, city
-
-  .quote
-    %h3=link_to "Request a quote", new_quote_path
+  %h2
+    Find the
+    =link_to "closest", cities_path
+    or
+    =link_to "cheapest", new_quote_path
+    screen printer for you.
