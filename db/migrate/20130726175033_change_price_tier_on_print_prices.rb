@@ -3,3 +3,6 @@ class ChangePriceTierOnPrintPrices < ActiveRecord::Migration
     change_column :print_prices, :price_tier, :integer
   end
 end
+
+
+
