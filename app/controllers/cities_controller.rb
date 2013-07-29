@@ -3,10 +3,14 @@ class CitiesController < ApplicationController
 
   def index
     @cities = City.order('name').all
+    @page_title = "List of Screen Printers by city"
+    @page_description = "List of Screen Printers by city"
   end
 
   def show
     @printers = Printer.where(city_id: @city).sort.reverse
+    @page_title = "Screen Printers in #{@city.name}"
+    @page_description = "Screen Printers in #{@city.name}"
   end
 
   def new

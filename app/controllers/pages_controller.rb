@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @cities = City.order('name').all
+    @page_title = "Find the closest, or cheapest screen printer | ScreenPrintly.com"
+    @page_description = "#Find the closest, or cheapest screen printer | ScreenPrintly.com"
   end
 end

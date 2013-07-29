@@ -1,4 +1,7 @@
 class QuotesController < ApplicationController
+
+  before_filter :add_meta_tags, only: [:new, :show]
+
   def index;end
 
   def new
@@ -18,5 +21,11 @@ class QuotesController < ApplicationController
     @quote = Quote.find(params[:id])
     qty = @quote.quantity
     @prices = PrintPrice.where(price_tier: @quote.quote_quantity(qty))
+  end
+
+private
+  def add_meta_tags
+    @page_title = "Find the cheapest printer"
+    @page_description = "Find the cheapest printer"
   end
 end

@@ -24,6 +24,8 @@ class PrintersController < ApplicationController
     @garment_prices = GarmentPrice.where(printer_id: @printer)
     @features = PrinterFeature.where(printer_id: @printer)
     @finishing = FinishingService.where(printer_id: @printer)
+    @page_title = @printer.shop_name
+    @page_description = "#{@printer.city.name} | #{@printer.shop_name}"
   end
 
   def edit

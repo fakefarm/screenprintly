@@ -6,6 +6,7 @@ gem 'pg'
 gem 'haml'
 gem "haml-rails"
 gem 'pry'
+gem 'meta-tags', require: 'meta_tags'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -19,6 +20,10 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.13.0'
   gem 'factory_girl_rails', '~> 4.2.1'
+end
+
+group :development do
+  gem 'xray-rails'
 end
 
 group :test do
