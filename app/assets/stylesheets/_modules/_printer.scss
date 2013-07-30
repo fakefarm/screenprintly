@@ -45,6 +45,15 @@
   }
 }
 
+.printer-column{
+  h2, h3, li{
+    font-size: 1.2em;
+  }
+  a{
+    font-size: .7em;
+  }
+}
+
 .formatting-help{
   position: absolute;
   top: 606px;
@@ -82,6 +91,10 @@
   }
   li{
     font-size: 1em;
+    &:hover{
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 }
 
