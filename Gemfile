@@ -10,6 +10,8 @@ gem 'meta-tags', require: 'meta_tags'
 gem 'thin'
 gem 'clearance', '1.0.0.rc7'
 gem 'redcarpet', '1.17.2'
+gem 'boarding_pass'
+
 
 group :development do
   gem 'awesome_print', :require => 'ap'
