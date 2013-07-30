@@ -1,7 +1,7 @@
 .container{
   @include outer-container();
   @include clearfix();
-  margin-top: 0;
+  margin-top: 1%;
 }
 
 .content-sheet{

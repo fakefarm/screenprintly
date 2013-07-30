@@ -70,3 +70,25 @@
     color: #7e7e7e;
   }
 }
+
+.printer-profile{
+  @include row();
+}
+
+.printer-content-nav{
+  @include span-columns(3);
+  ul{
+    margin: 0;
+  }
+  li{
+    font-size: 1em;
+  }
+}
+
+.printer-content{
+  @include span-columns(9);
+}
+
+#about-content, #customer-service-content, #services-content, #terms-content, #price-list-content, #garments-list-content {
+  display: none;
+}
