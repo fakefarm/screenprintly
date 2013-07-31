@@ -1,6 +1,6 @@
 %h1 Listing all printers
 - @printers.each do |printer|
-  %ul
+  %ul.printer-index-list
     %li
       = link_to printer.shop_name, printer_path(printer)
 

@@ -16,8 +16,10 @@
       %th Name
       %th Price
       %th City
+      %th
     - @prices.each do |price|
       %tr
         %td= price.printer.shop_name
         %td= price.send(@quote.number_of_colors)
         %td= price.printer.city.name
+        %td= link_to 'Select printer',  printer_path(price.printer)
