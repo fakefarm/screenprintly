@@ -26,7 +26,7 @@ $(document).ready(function(){
 
   $('#garment-list').click(function(){
     $('.printer-content').children().hide();
-    $('#garment-list-content').toggle();
+    $('#garments-list-content').toggle();
   });
 
   $('#summary').click(function(){
