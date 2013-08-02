@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130729110550) do
+ActiveRecord::Schema.define(:version => 20130802130543) do
 
   create_table "cities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -51,6 +51,15 @@ ActiveRecord::Schema.define(:version => 20130729110550) do
 
   add_index "garment_prices", ["printer_id"], :name => "index_garment_prices_on_printer_id"
 
+  create_table "garment_selectors", :force => true do |t|
+    t.string   "short_sleeve_tshirt"
+    t.integer  "printer_id"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "garment_selectors", ["printer_id"], :name => "index_garment_selectors_on_printer_id"
+
   create_table "print_prices", :force => true do |t|
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
@@ -86,8 +95,8 @@ ActiveRecord::Schema.define(:version => 20130729110550) do
   add_index "printer_features", ["printer_id"], :name => "index_printer_features_on_printer_id"
 
   create_table "printers", :force => true do |t|
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "email"
     t.string   "contact_name"
     t.string   "phone"
@@ -98,6 +107,11 @@ ActiveRecord::Schema.define(:version => 20130729110550) do
     t.string   "shop_name"
     t.integer  "city_id"
     t.string   "slug"
+    t.text     "about"
+    t.text     "overview"
+    t.text     "services"
+    t.text     "customer_service"
+    t.text     "terms"
   end
 
   add_index "printers", ["slug"], :name => "index_printers_on_slug"

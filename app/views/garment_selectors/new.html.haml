@@ -1,0 +1,68 @@
+%h1 Pick your t-shirt
+= form_for [:printer, @garment_selector] do |f|
+  .shirt-row
+    - unless @budget_max.nil?
+      .shirt-section
+        = image_tag 'budget.png'
+        %h1= f.label(:budget_shirt, 'Budget')
+        %h2
+          $
+          = @budget_max.price
+          each
+        %h3 Features
+        %ul
+          %li Awesome
+
+        %h4 Examples
+        %ul
+        - @budget.each do |sku|
+          %li
+            = sku.brand
+            \|
+            = sku.style_number
+        = f.radio_button(:short_sleeve_tshirt, 'budget')
+
+    - unless @brand_max.nil?
+      .shirt-section
+        = image_tag 'brand.png'
+        %h1= f.label(:brand_shirt, 'Brand')
+        %h2
+          $
+          = @brand_max.price
+          each
+        %h3 Features
+        %ul
+          %li Recommended
+
+        %h4 Examples
+        %ul
+        - @brand.each do |sku|
+          %li
+            = sku.brand
+            \|
+            = sku.style_number
+        = f.radio_button(:short_sleeve_tshirt, 'brand')
+
+    - unless @boutique_max.nil?
+      .shirt-section
+        = image_tag 'boutique.png'
+        %h1= f.label(:boutique_shirt, 'Boutique')
+        %h2
+          $
+          = @boutique_max.price
+          each
+
+        %h3 Features
+        %ul
+          %li Hope so!
+
+        %h4 Examples
+        %ul
+        - @boutique.each do |sku|
+          %li
+            = sku.brand
+            \|
+            = sku.style_number
+        = f.radio_button(:short_sleeve_tshirt, 'boutique')
+
+  =f.submit "Proceed to Printer Page"

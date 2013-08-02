@@ -14,6 +14,7 @@ class Printer < ActiveRecord::Base
   has_many :garment_prices
   has_many :finishing_services
   has_many :printer_features
+  has_many :garment_selectors
 
   def pending?
     true

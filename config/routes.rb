@@ -13,6 +13,7 @@ Screenprintly::Application.routes.draw do
     resources :print_prices
     resources :printer_features
     resources :finishing_services
+    resources :garment_selectors
   end
 
 
