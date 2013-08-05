@@ -1,5 +1,6 @@
 %h1 Pick your t-shirt
 = form_for [:printer, @garment_selector] do |f|
+  = f.hidden_field :printer_id, value: @printer.id
   .shirt-row
     - unless @budget_max.nil?
       .shirt-section
@@ -64,5 +65,6 @@
             \|
             = sku.style_number
         = f.radio_button(:short_sleeve_tshirt, 'boutique')
-
+  =f.label "Additional comments"
+  =f.text_area :comment, :cols => "20", :rows => "8", placeholder: "Any garment specifics you'd like #{@printer.shop_name} to know about."
   =f.submit "Proceed to Printer Page"

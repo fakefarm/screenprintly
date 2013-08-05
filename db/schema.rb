@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130802130543) do
+ActiveRecord::Schema.define(:version => 20130803210455) do
 
   create_table "cities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -56,6 +56,8 @@ ActiveRecord::Schema.define(:version => 20130802130543) do
     t.integer  "printer_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.text     "comment"
+    t.string   "garment_price"
   end
 
   add_index "garment_selectors", ["printer_id"], :name => "index_garment_selectors_on_printer_id"
