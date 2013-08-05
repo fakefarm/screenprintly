@@ -19,8 +19,10 @@ feature Quote do
     page.should have_text('23')
   end
 
-  describe 'selecting garments' do
-    scenario 'moves you to pick one of 3 suggested garments' do
+  describe 'placing an order' do
+     # _refactor - create a before each
+
+    scenario 'from ink to completion' do
       future_shirts = create(:printer, shop_name: "future shirts" )
       future_prices = create(:print_price, one_color: 33, printer_id: future_shirts.id)
       future_garment  = create(:garment_price, price: '350', printer_id: future_shirts.id )
@@ -37,6 +39,16 @@ feature Quote do
       page.should have_text('Pick your t-shirt')
       choose('garment_selector_short_sleeve_tshirt_budget')
       page.should have_text('350')
+      fill_in 'garment_selector_comment', with: "I want american apparel"
+      click_button('Proceed to Printer Page')
+      page.should have_text('Review your order')
+      page.should have_text('budget')
+      page.should have_text('garment price')
+      page.should have_text('350')
+      page.should have_text('print price')
+      page.should have_text('33')
+      page.should have_text('5745')
+      click_button('Submit order')
     end
   end
 end
