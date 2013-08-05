@@ -20,6 +20,9 @@
     - @prices.each do |price|
       %tr
         %td= price.printer.shop_name
-        %td= price.send(@quote.number_of_colors)
+        %td
+          $
+          \.
+          = price.send(@quote.number_of_colors)
         %td= price.printer.city.name
         %td= link_to 'Select printer', new_printer_garment_selector_path(price.printer)
