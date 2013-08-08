@@ -11,4 +11,6 @@ describe GarmentPrice do
   it 'is invalid without price' do
     expect(build(:garment_price, price: nil)).to be_invalid
   end
+
+  it 'needs to have one of each budget, brand, boutique'
 end

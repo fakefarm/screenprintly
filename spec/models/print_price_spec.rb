@@ -14,7 +14,7 @@ describe PrintPrice do
   it 'has prices for a base and 8 colors' do
     price = PrintPrice.create(base_color: 5, one_color: 23, two_color: 24, three_color: 34, four_color: 40, five_color: 50, six_color: 60, seven_color: 72, eight_color: 75)
 
-      expect(price.base_color).to be_true
+      expect(price.base_color).to be_true # _question - is this okay to test each of these specifically?
       expect(price.one_color).to be_true
       expect(price.two_color).to be_true
       expect(price.three_color).to be_true

@@ -20,7 +20,7 @@ feature Quote do
   end
 
   describe 'placing an order' do
-     # _refactor - create a before each
+     # _refactor - create a before each and move this test into confirmations!
 
     scenario 'from ink to completion' do
       future_shirts = create(:printer, shop_name: "future shirts" )
@@ -41,14 +41,10 @@ feature Quote do
       page.should have_text('350')
       fill_in 'garment_selector_comment', with: "I want american apparel"
       click_button('Proceed to Printer Page')
-      page.should have_text('Review your order')
       page.should have_text('budget')
-      page.should have_text('garment price')
-      page.should have_text('350')
-      page.should have_text('print price')
-      page.should have_text('33')
-      page.should have_text('5745')
+      page.should have_text('7245')
       click_button('Submit order')
+      page.should have_text ("You're all set!")
     end
   end
 end

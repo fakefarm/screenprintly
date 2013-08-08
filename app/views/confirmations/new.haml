@@ -1,23 +1,24 @@
 %h1 Review your Order
 
-%h2 Printer
-%h3= @printer.shop_name
 
-%h2 Garment Category
-%h3= @garment.short_sleeve_tshirt
+%h2
+  = @quote.quantity
+  ,
+  = colors_to_english(@quote.number_of_colors)
+  = @garment.short_sleeve_tshirt
+  t-shirts through
+  = @printer.shop_name
+  in
+  = @printer.city.name
 
-%h2 Garment Price
-%h3= @garment.garment_price
+.total-price
+  %h2
+    Total Invoice (Pre-shipping):
+    .output= total_order(@quote.quantity.to_i, @print_price.to_i, @garment.garment_price.to_i)
 
-%h2 Print Price
+    %h2
+      Price per shirt
+      .output= price_per_shirt(total_order(@quote.quantity.to_i, @print_price.to_i, @garment.garment_price.to_i), @quote.quantity)
 
-
-%h2 Quantity
-%h3= @quote.quantity
-
-%h2 Number of colors
-%h3= @quote.number_of_colors
-
-
-%h2 Total
-%p
+= form_for [:printer, :garment_selector, @confirmation] do |f|
+  = f.submit 'Submit order'
