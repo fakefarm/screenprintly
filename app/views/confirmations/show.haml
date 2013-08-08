@@ -7,12 +7,11 @@
   =@printer.shop_name
   is looking over your order and will be in touch with you soon.
 
-%h3 The Details
-%p Would you like to upload your art, shipping, and sizes now, or later?
+.total-price
+  %h3
+    Visit
+    .output= link_to @printer.shop_name, printer_path(@printer)
+    to learn more about them!
 
-
-%h4 Wasn't that a great way to order t-shirts?
-%p How about telling your friends about ScreenPrintly!
-
-%h5 Terms and Conditions.
+%h4 Terms and Conditions.
 %p If things change, so will your order.
