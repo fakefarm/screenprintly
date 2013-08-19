@@ -24,6 +24,9 @@ class GarmentSelectorsController < ApplicationController
     @garment_selector = GarmentSelector.create(params[:garment_selector])
 
     if @garment_selector.save
+      @session = Session.find_by_session_id(session['session_id'])
+      @session.update_attributes(printer_id: @printer.id, garment_id: @garment_selector.id)
+      require 'pry'; binding.pry
       redirect_to new_printer_garment_selector_confirmation_path(@printer, @garment_selector)
     else
       redirect_to 'new'

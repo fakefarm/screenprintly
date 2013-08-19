@@ -11,6 +11,7 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new(params[:quote])
     if @quote.save
+    @session = Session.create(session_id: session['session_id'], quote_id: @quote.id )
     redirect_to quote_path(@quote)
     else
       render 'new'

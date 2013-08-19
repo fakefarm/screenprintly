@@ -1,13 +1,18 @@
 class ConfirmationsController < ApplicationController
   include ConfirmationsHelper
+
   def index
   end
 
   def new
+    @session = Session.find_by_session_id(session['session_id'])
+    @garment = GarmentSelector.find(@session.garment_id)
+    @quote = Quote.find(@session.quote_id)
+
     @printer = Printer.find_by_slug!(params[:printer_id])
     @garment_selector = GarmentSelector.find(params[:garment_selector_id])
-    @garment = GarmentSelector.last # _refactor How do I use current session without requiring signin?
-    @quote = Quote.last # # _refactor How do I use current session without requiring signin?
+
+
     @quote_tier = @quote.quote_quantity(@quote.quantity)
     @quote_tier_all = PrintPrice.where(price_tier: @quote_tier, printer_id: @printer)
     @print_price = @quote_tier_all.first.send(@quote.number_of_colors)
@@ -16,10 +21,13 @@ class ConfirmationsController < ApplicationController
   end
 
   def create
+    @session = Session.find_by_session_id(session['session_id'])
     @printer = Printer.find_by_slug!(params[:printer_id])
+    @quote = Quote.find(@session.quote_id)
+
     @garment_selector = GarmentSelector.find(params[:garment_selector_id])
-    @garment = GarmentSelector.last # _refactor How do I use current session without requiring signin?
-    @quote = Quote.last # # _refactor How do I use current session without requiring signin?
+    @garment = GarmentSelector.find(@session.garment_id)
+
     @quote_tier = @quote.quote_quantity(@quote.quantity)
     @quote_tier_all = PrintPrice.where(price_tier: @quote_tier, printer_id: @printer)
     @print_price = @quote_tier_all.first.send(@quote.number_of_colors)
@@ -42,7 +50,7 @@ class ConfirmationsController < ApplicationController
     end
   end
 
-  def show;
+  def show
     @printer = Printer.find_by_slug!(params[:printer_id])
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130808034521) do
+ActiveRecord::Schema.define(:version => 20130819131716) do
 
   create_table "cities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -134,6 +134,16 @@ ActiveRecord::Schema.define(:version => 20130808034521) do
     t.string   "number_of_colors"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "sessions", :force => true do |t|
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "session_id"
+    t.integer  "quote_id"
+    t.integer  "garment_id"
+    t.integer  "printer_id"
+    t.integer  "garment_price"
   end
 
   create_table "users", :force => true do |t|
