@@ -1,5 +1,5 @@
 class PrinterMailer < ActionMailer::Base
-  default from: "dave@screenprintly.com"
+  default from: "dmwoodall@gmail.com"
 
   def new_quote(printer)
     @printer = printer
