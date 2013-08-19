@@ -44,6 +44,7 @@ class ConfirmationsController < ApplicationController
       )
 
     if @confirmation.save
+      PrinterMailer.new_quote(@printer).deliver
       redirect_to printer_garment_selector_confirmation_path(@printer, @garment_selector, @confirmation)
     else
       render 'new'
