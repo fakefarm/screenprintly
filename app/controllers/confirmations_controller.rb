@@ -5,7 +5,7 @@ class ConfirmationsController < ApplicationController
   end
 
   def new
-    @session = Session.find_by_session_id(session['session_id'])
+    @session = Session.where(session_id: session['session_id'] ).last
     @garment = GarmentSelector.find(@session.garment_id)
     @quote = Quote.find(@session.quote_id)
 
@@ -18,10 +18,11 @@ class ConfirmationsController < ApplicationController
     @print_price = @quote_tier_all.first.send(@quote.number_of_colors)
 
     @confirmation = Confirmation.new
+
   end
 
   def create
-    @session = Session.find_by_session_id(session['session_id'])
+    @session = Session.where(session_id: session['session_id'] ).last
     @printer = Printer.find_by_slug!(params[:printer_id])
     @quote = Quote.find(@session.quote_id)
 

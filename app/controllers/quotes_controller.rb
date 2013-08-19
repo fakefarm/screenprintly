@@ -19,6 +19,7 @@ class QuotesController < ApplicationController
   end
 
   def show
+    @session = Session.where(session_id: session['session_id'] ).last
     @quote = Quote.find(params[:id])
     qty = @quote.quantity
     @prices = PrintPrice.where(price_tier: @quote.quote_quantity(qty))

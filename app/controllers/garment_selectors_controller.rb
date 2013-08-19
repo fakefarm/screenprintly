@@ -16,15 +16,16 @@ class GarmentSelectorsController < ApplicationController
 
     @boutique = @garment_prices.where(quality: 'Premium')
     @boutique_max = @boutique.max_by { |g| g.price }
+    @session = Session.where(session_id: session['session_id'] ).last
   end
 
   def create
     @printer = Printer.find_by_slug(params[:printer_id])
 
     @garment_selector = GarmentSelector.create(params[:garment_selector])
+    @session = Session.where(session_id: session['session_id'] ).last
 
     if @garment_selector.save
-      @session = Session.find_by_session_id(session['session_id'])
       @session.update_attributes(printer_id: @printer.id, garment_id: @garment_selector.id)
       redirect_to new_printer_garment_selector_confirmation_path(@printer, @garment_selector)
     else
