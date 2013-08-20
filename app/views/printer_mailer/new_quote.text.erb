@@ -1,7 +1,11 @@
 Hey <%= @printer.contact_name %>!
 
 Just a heads up you just got a new quote from;
-<quote info coming here>
+
+Name: <%= @customer.name %>
+Email: <%= @customer.email %>
+Quantity: <%= @quote.quantity %>
+Number of Colors: <%= @quote.number_of_colors %>
 
 I went ahead and shot them an email that you're looking over paperwork
 

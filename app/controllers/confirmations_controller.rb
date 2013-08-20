@@ -38,14 +38,16 @@ class ConfirmationsController < ApplicationController
       garment: @garment.short_sleeve_tshirt,
       printer_id: @printer.id,
       city: @printer.city.id,
-
+      name: params[:confirmation][:name],
+      email: params[:confirmation][:email],
       total_invoice: total_order(@quote.quantity.to_i, @print_price.to_i, @garment.garment_price.to_i),
 
       piece_price: price_per_shirt(total_order(@quote.quantity.to_i, @print_price.to_i, @garment.garment_price.to_i), @quote.quantity)
       )
-
     if @confirmation.save
+
       PrinterMailer.new_quote(@printer).deliver
+
       redirect_to printer_garment_selector_confirmation_path(@printer, @garment_selector, @confirmation)
     else
       render 'new'
