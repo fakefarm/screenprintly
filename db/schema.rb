@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130819233538) do
+ActiveRecord::Schema.define(:version => 20130820001633) do
 
   create_table "cities", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -141,7 +141,7 @@ ActiveRecord::Schema.define(:version => 20130819233538) do
   create_table "sessions", :force => true do |t|
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
-    t.integer  "session_id"
+    t.string   "session_id"
     t.integer  "quote_id"
     t.integer  "garment_id"
     t.integer  "printer_id"
