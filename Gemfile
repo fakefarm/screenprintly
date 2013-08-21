@@ -5,7 +5,6 @@ gem 'neat'
 gem 'pg'
 gem 'haml'
 gem "haml-rails"
-gem 'pry'
 gem 'meta-tags', require: 'meta_tags'
 gem 'thin'
 gem 'clearance', '1.0.0.rc7'
@@ -24,6 +23,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pry'
   gem 'xray-rails'
 end
 
