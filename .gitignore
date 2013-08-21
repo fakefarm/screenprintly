@@ -15,3 +15,6 @@
 /tmp
 
 /bin/rails
+
+coverage/
+
