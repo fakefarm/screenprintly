@@ -5,9 +5,9 @@ class ConfirmationsController < ApplicationController
   end
 
   def new
-    @session = Session.where(session_id: session['session_id'] ).last
-    @garment = GarmentSelector.find(@session.garment_id)
-    @quote = Quote.find(@session.quote_id)
+    @garment = GarmentSelector.find(session['garment_id'])
+
+    @quote = Quote.find(session['quote_id'])
 
     @printer = Printer.find_by_slug!(params[:printer_id])
     @garment_selector = GarmentSelector.find(params[:garment_selector_id])
@@ -22,12 +22,11 @@ class ConfirmationsController < ApplicationController
   end
 
   def create
-    @session = Session.where(session_id: session['session_id'] ).last
     @printer = Printer.find_by_slug!(params[:printer_id])
-    @quote = Quote.find(@session.quote_id)
+    @quote = Quote.find(session['quote_id'])
 
     @garment_selector = GarmentSelector.find(params[:garment_selector_id])
-    @garment = GarmentSelector.find(@session.garment_id)
+    @garment = GarmentSelector.find(session['garment_id'])
 
     @quote_tier = @quote.quote_quantity(@quote.quantity)
     @quote_tier_all = PrintPrice.where(price_tier: @quote_tier, printer_id: @printer)
@@ -46,7 +45,7 @@ class ConfirmationsController < ApplicationController
       )
     if @confirmation.save
 
-      PrinterMailer.new_quote(@printer).deliver
+      PrinterMailer.new_quote(@printer, session['quote_id']).deliver
 
       redirect_to printer_garment_selector_confirmation_path(@printer, @garment_selector, @confirmation)
     else
