@@ -3,6 +3,8 @@ Screenprintly::Application.configure do
   # Clearance gem
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
+  # Letter Opener gem
+  config.action_mailer.delivery_method = :letter_opener
 
 
   # Settings specified here will take precedence over those in config/application.rb

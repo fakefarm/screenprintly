@@ -9,12 +9,7 @@ gem 'meta-tags', require: 'meta_tags'
 gem 'thin'
 gem 'clearance', '1.0.0.rc7'
 gem 'redcarpet', '1.17.2'
-gem 'boarding_pass'
 gem 'simplecov', :require => false, :group => :test
-
-group :development do
-  gem 'awesome_print', :require => 'ap'
-end
 
 group :development, :test do
   gem 'sqlite3'
@@ -23,7 +18,12 @@ group :development, :test do
 end
 
 group :development do
+  gem 'awesome_print', :require => 'ap'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem "letter_opener"
   gem 'pry'
+  gem 'binding_of_caller'
   gem 'xray-rails'
 end
 
