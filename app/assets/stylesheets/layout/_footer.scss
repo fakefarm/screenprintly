@@ -1,0 +1,15 @@
+#l-footer{
+  text-align: right;
+  margin-top: 20px;
+  li{
+    display: inline-block;
+    font-size: 1em;
+    padding: 0 1%;
+  }
+  a{
+    text-decoration: none;
+  }
+  a:hover{
+    color: $red;
+  }
+}

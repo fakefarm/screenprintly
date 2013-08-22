@@ -1,24 +1,35 @@
+// Libraries
 @import 'bourbon';
 @import 'neat';
-@import 'settings';
-@import 'boarding_pass';
-@import 'base';
-@import '_modules/city';
-@import '_modules/general';
-@import '_modules/printer';
-@import '_modules/confirmation';
+@import 'neat-helpers';
 
+// Base
+@import 'base/colors';
+@import 'base/typography';
+@import 'base/forms';
+@import 'base/functions';
+@import 'base/lists';
+@import 'base/normalize';
+@import 'base/tables';
+@import 'base/settings';
+@import 'base/base';
 
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+// Layout
+@import 'layout/containers';
+@import 'layout/footer';
+@import 'layout/header';
+
+// Modules
+@import 'modules/buttons';
+@import 'modules/ie';
+@import 'modules/general';
+@import 'modules/inputs';
+@import 'modules/notices';
+@import 'modules/text';
+@import 'modules/utilities';
+
+// Views
+@import 'views/cities/city';
+@import 'views/confirmations/confirmation';
+@import 'views/garment_selectors/shirt_selector';
+@import 'views/printers/printer';
