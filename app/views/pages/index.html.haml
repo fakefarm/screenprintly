@@ -1,8 +1,25 @@
-.hero
+.l-primary-content.hero
   %h1 Need T-shirts?
-  %h2
-    Find the
-    =link_to "closest", cities_path
-    or
-    =link_to "cheapest", new_quote_path
-    screen printer for you.
+  %h2 Find a t-shirt printer by
+  %ul
+    %li=link_to "City,", cities_path
+    %li=link_to "Price,", new_quote_path
+    %li
+      or
+      =link_to "Fashions"
+
+
+.l-sidebar.sidekick
+
+  .logo
+    = link_to image_tag('logo.png'), root_path
+    %p Find the best t-shirt printer.
+
+  %h2 About us
+  %p Screen Printly brings t-shirt printers to one spot so you can find and compare the best by location, price, or fashion features.
+
+  %h2 How it works
+  %p Fill out your project details and discover the best printer for your t-shirt.
+
+  %h2 About the printers
+  %p Not all printers are the same. And not every printer meets ScreenPrintly's standards. We make sure the printers meet our standards.

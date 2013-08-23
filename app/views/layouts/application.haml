@@ -36,17 +36,14 @@
           %a{ href: "http://www.google.com/chromeframe/?redirect=true", target: '_blank' } activate Google Chrome Frame
           to improve your experience.
 
+
+
+
     #l-constrained
-
-      %header#l-header
-        = render '/layouts/shared/header'
-        .clearance= render '/layouts/shared/clearance'
-
       .l-main
         = yield
 
       %footer#l-footer
         = render '/layouts/shared/footer'
         = render '/layouts/shared/analytics'
-
         = render '/layouts/shared/browser_width'

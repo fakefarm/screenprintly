@@ -1,0 +1,26 @@
+@mixin bg-full-size($image){
+  background: url("/assets/#{$image}") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.logo{
+  @include clearfix();
+  padding-bottom: 3%;
+  img {
+    @include span-columns(3);
+    padding: 0 2%;
+    @include media($breakpoint-ipad){
+      @include span-columns(5);
+      padding: 0 3% 0 0;
+    }
+  }
+  p{
+    @include media($breakpoint-ipad){
+      font-size: 1.3em;
+      margin: .6em 0 0 0;
+    }
+  }
+}

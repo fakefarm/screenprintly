@@ -1,9 +1,12 @@
 // Libraries
 @import 'bourbon';
 @import 'neat';
+@import 'base/grid-settings';
 @import 'neat-helpers';
 
 // Base
+@import 'base/settings';
+@import 'base/images';
 @import 'base/colors';
 @import 'base/typography';
 @import 'base/forms';
@@ -11,25 +14,26 @@
 @import 'base/lists';
 @import 'base/normalize';
 @import 'base/tables';
-@import 'base/settings';
 @import 'base/base';
+
+// Modules
+@import 'modules/boxes';
+@import 'modules/text';
+@import 'modules/buttons';
+@import 'modules/ie';
+@import 'modules/general';
+@import 'modules/inputs';
+@import 'modules/notices';
+@import 'modules/utilities';
 
 // Layout
 @import 'layout/containers';
 @import 'layout/footer';
 @import 'layout/header';
 
-// Modules
-@import 'modules/buttons';
-@import 'modules/ie';
-@import 'modules/general';
-@import 'modules/inputs';
-@import 'modules/notices';
-@import 'modules/text';
-@import 'modules/utilities';
-
 // Views
 @import 'views/cities/city';
 @import 'views/confirmations/confirmation';
 @import 'views/garment_selectors/shirt_selector';
 @import 'views/printers/printer';
+@import 'views/pages/index';

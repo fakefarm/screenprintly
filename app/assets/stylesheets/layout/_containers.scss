@@ -1,26 +1,45 @@
 // General Containers
 
 #l-constrained {
-  @include outer-container;
+  @include outer-container();
   padding: 0 $page-gutter;
+  @include media($breakpoint-ipad){
+    @include shift(3.2);
+ }
 }
 
 #l-header{
-  @include clearfix();
+  @include outer-container();
+  @include shift(3.2);
+
+  h1{
+    @include text-tag;
+    font-size: 1em;
+  }
 }
 
 .l-main{
-    background: white;
-    padding: 1% 2%;
-    margin: 2% 0% 2%;
-    border-radius: 3px;
-    box-shadow: 1px 2px 2px rgba(0,0,0,.2);
-    border: 1px solid rgb(187, 187, 187);
+  @include row();
+}
+
+.l-primary-content{
+  @include media($breakpoint-ipad){ @include span-columns(7); }
 }
 
 .l-sidebar {
+  border-top: 1px solid $grey;
+  padding: 5% 0;
+  margin: 5% 0;
+
   @include media($breakpoint-ipad) {
+    border-top: none;
+    border-left: 1px dashed $grey;
+    padding-left: 4%;
+    padding-top: 4%;
     @include span-columns(4);
+    p{
+      font-size: .8em;
+    }
   }
 }
 

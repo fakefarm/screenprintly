@@ -1,5 +1,6 @@
 body{
   background: $tan;
+  @include media($breakpoint-ipad){ @include  bg-full-size("bg.png") }
 }
 
 h1, h2, h3, h4, h5{
@@ -7,22 +8,8 @@ h1, h2, h3, h4, h5{
   color: $steele;
 }
 
-h1 {
-  font-size: 4.5em;
-  font-weight: 800;
-}
-
-h2 {
-  font-size: 2em;
-  font-weight: 800;
-  color: $green;
-  font-family: $serif;
-  font-weight: 300;
-  a {
-    color: $blue !important;
-  }
-}
-
+h1 {}
+h2 {}
 h3 {
   font-size: 1.5em;
   font-weight: 300;
@@ -38,13 +25,17 @@ li{
   list-style: none;
 }
 
+header{
+
+}
+
 table{
   width: 95%;
 }
 
 
 a{
-  color: $blue;
+  color: white;
   text-decoration: none;
   font-family: $serif;
   &:hover{
