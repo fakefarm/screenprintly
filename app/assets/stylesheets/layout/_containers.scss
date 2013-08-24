@@ -3,7 +3,7 @@
 #l-constrained {
   @include outer-container();
   padding: 0 $page-gutter;
-  @include media($breakpoint-ipad){
+  @include media($breakpoint-desktop){
     @include shift(3.2);
  }
 }

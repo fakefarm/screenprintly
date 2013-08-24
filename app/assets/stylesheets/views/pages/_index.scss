@@ -3,6 +3,12 @@
     @include media($breakpoint-ipad){
       h1{
         font-weight: 800;
+        font-size: 4em;
+      }
+    }
+    @include media($breakpoint-desktop){
+      h1{
+        font-weight: 800;
         font-size: 8em;
       }
     }
@@ -16,11 +22,11 @@
   }
 
 
-
-.logo p{
-  @include media($breakpoint-ipad){
-    font-size: 1.2em;
-    margin: .8em 0 0 0;
+.hero-link li a{
+  width: 100%;
+  font-size: .7em;
+  @include media($breakpoint-desktop){
+    width: 80%;
+    font-size: 1em;
   }
 }
-

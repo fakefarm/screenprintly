@@ -19,6 +19,7 @@
 
 // Modules
 @import 'modules/boxes';
+@import 'modules/branding';
 @import 'modules/text';
 @import 'modules/buttons';
 @import 'modules/ie';
@@ -29,6 +30,7 @@
 
 // Themes
 @import 'themes/listing';
+@import 'themes/summary';
 
 // Layout
 @import 'layout/containers';
@@ -41,3 +43,4 @@
 @import 'views/garment_selectors/shirt_selector';
 @import 'views/printers/printer';
 @import 'views/pages/index';
+@import 'views/quotes/quotes';

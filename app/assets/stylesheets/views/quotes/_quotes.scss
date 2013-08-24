@@ -1,0 +1,10 @@
+.quote{
+  @include media($breakpoint-ipad){ @include span-columns(6); }
+  h1{ @include text-head; }
+  .form{
+    @include white-round-box;
+    @include media($breakpoint-ipad){
+      margin-top: 15%;
+     }
+  }
+}

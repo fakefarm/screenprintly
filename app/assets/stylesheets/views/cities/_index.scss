@@ -1,12 +1,16 @@
 .cities{
-    h1 { font-size: 2.5em; }
+  h1 {
+    font-size: 1.4em;
     @include media($breakpoint-ipad){
-      h1{
         font-weight: 800;
-        font-size: 4em;
-      }
+        font-size: 3em;
+    }
+    @include media($breakpoint-desktop){
+      font-weight: 800;
+      font-size: 4em;
     }
   }
+}
 
 li.city-name a{
   font-size: .6em;

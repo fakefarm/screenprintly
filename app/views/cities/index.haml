@@ -8,10 +8,7 @@
     %li.city-name=link_to city.name, city_path(city)
 
 .l-sidebar.sidekick
-
-  .logo
-    = link_to image_tag('logo.png'), root_path
-    %p The best t-shirts come from the best printers.
+  = render '/layouts/shared/branding'
 
   %h2 About Local printers
   %p Local printers can will help you if you're going on tour, or want to visit the shop.

@@ -1,4 +1,6 @@
-.listing {
+.summary {
+  @include span-columns(10);
+  @include white-round-box;
   h1{ @include text-head; }
   h2{ @include text-tag; }
   p{

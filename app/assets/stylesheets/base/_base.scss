@@ -1,6 +1,10 @@
-body{
+body#application{
   background: $tan;
   @include media($breakpoint-ipad){ @include  bg-full-size("bg.png") }
+}
+
+body#printers{
+ background: url("grey_wash.png");
 }
 
 h1, h2, h3, h4, h5{

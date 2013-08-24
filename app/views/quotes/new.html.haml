@@ -1,12 +1,25 @@
-%h1 Quote
-=form_for @quote do |f|
-  %p
-    = f.label 'quantity'
-    = f.text_field 'quantity'
-  %p
-    = f.label 'Number of colors'
-    = f.select(:number_of_colors, options_for_select(color_options))
+.quote
+  .form
+    %h1 New Quote
+    =form_for @quote do |f|
+      %p
+        = f.label 'quantity'
+        = f.text_field 'quantity'
+      %p
+        = f.label 'Number of colors'
+        = f.select(:number_of_colors, options_for_select(color_options))
 
-  .submit
-    = f.submit
+      .submit
+        = f.submit
 
+.l-sidebar.sidekick
+  = render '/layouts/shared/branding'
+
+  %h2 What is being quoted
+  %p These are standard size, plastisol prints
+
+  %h2 Compare Apples to Apples
+  %p Finding by price means that they all offer the same service. If you want to have more features
+
+  %h2 Why quantity and colors?
+  %p Each print color requires film and screens, which are fixed costs. The more you buy, those costs are spread over a larger number of shirts, making it cheaper per print for the more you purchase.

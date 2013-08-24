@@ -1,17 +1,18 @@
-%h1 You're all set!
-%h2 Next steps
-%p
-  =@printer.contact_name
-  ,
-  over at
-  =@printer.shop_name
-  is looking over your order and will be in touch with you soon.
+.summary
+  %h1 You're all set!
+  %h2 Next steps
+  %p
+    =@printer.contact_name
+    ,
+    over at
+    =@printer.shop_name
+    is looking over your order and will be in touch with you soon.
 
-.total-price
-  %h3
-    Visit
-    .output= link_to @printer.shop_name, printer_path(@printer)
-    to learn more about them!
+  .total-price
+    %h3
+      Visit
+      .output= link_to @printer.shop_name, printer_path(@printer)
+      to learn more about them!
 
-%h4 Terms and Conditions.
-%p If things change, so will your order.
+  %h4 Terms and Conditions.
+  %p If things change, so will your order.

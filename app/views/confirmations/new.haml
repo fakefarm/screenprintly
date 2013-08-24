@@ -1,33 +1,33 @@
-%h1 Review your Order
+.summary
+  %h1 Review your Order
 
-
-%h2
-  = @quote.quantity
-  ,
-  = colors_to_english(@quote.number_of_colors)
-  = @garment.short_sleeve_tshirt
-  t-shirts through
-  = @printer.shop_name
-  in
-  = @printer.city.name
-
-.total-price
   %h2
-    Total Invoice (Pre-shipping):
-    .output= total_order(@quote.quantity.to_i, @print_price.to_i, @garment.garment_price.to_i)
+    = @quote.quantity
+    ,
+    = colors_to_english(@quote.number_of_colors)
+    = @garment.short_sleeve_tshirt
+    t-shirts through
+    = @printer.shop_name
+    in
+    = @printer.city.name
 
+  .total-price
     %h2
-      Price per shirt
-      .output= price_per_shirt(total_order(@quote.quantity.to_i, @print_price.to_i, @garment.garment_price.to_i), @quote.quantity)
+      Total Invoice (Pre-shipping): $
+      .output= total_order(@quote.quantity.to_i, @print_price.to_i, @garment.garment_price.to_i)
 
-%hr
-%h2 Set the project in motion...
+      %h2
+        Price per shirt $
+        .output= price_per_shirt(total_order(@quote.quantity.to_i, @print_price.to_i, @garment.garment_price.to_i), @quote.quantity)
 
-= form_for [:printer, :garment_selector, @confirmation] do |f|
-  = f.label 'Your name'
-  = f.text_field 'name'
+  %hr
+  %h2 Set the project in motion...
 
-  = f.label 'Your email'
-  = f.text_field 'email'
+  = form_for [:printer, :garment_selector, @confirmation] do |f|
+    = f.label 'Your name'
+    = f.text_field 'name'
 
-  = f.submit 'Submit order'
+    = f.label 'Your email'
+    = f.text_field 'email'
+
+    = f.submit 'Submit order'
