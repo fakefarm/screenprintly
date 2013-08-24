@@ -8,15 +8,7 @@
  }
 }
 
-#l-header{
-  @include outer-container();
-  @include shift(3.2);
-
-  h1{
-    @include text-tag;
-    font-size: 1em;
-  }
-}
+#l-printer-wrapper { @include outer-container(); }
 
 .l-main{
   @include row();
@@ -27,7 +19,7 @@
 }
 
 .l-sidebar {
-  border-top: 1px solid $grey;
+  border-top: 1px dashed $grey;
   padding: 5% 0;
   margin: 5% 0;
 
@@ -35,7 +27,7 @@
     border-top: none;
     border-left: 1px dashed $grey;
     padding-left: 4%;
-    padding-top: 4%;
+    padding-top: 2%;
     @include span-columns(6);
     p{
       font-size: .9em;

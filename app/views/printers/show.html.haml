@@ -6,8 +6,8 @@
     %li= link_to 'Add a garment',    new_printer_garment_price_path(@printer)
     %li= link_to 'Add a finishing service',  new_printer_finishing_service_path(@printer)
 
-%h1#summary= @printer.shop_name
 .printer-profile
+  %h1#summary= @printer.shop_name
   .printer-content-nav
     %ul
       %li#about About
@@ -57,5 +57,4 @@
       = render 'print_price_lists'
     #garments-list-content
       = render 'garment_price_lists'
-
 

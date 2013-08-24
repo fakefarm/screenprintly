@@ -1,40 +1,26 @@
-.pages {
- h1{ @include text-head; }
- h2{ @include text-tag; }
-  p{
-    font-size: 2em;
-    background: white;
-  }
-  li{
-    @include text-head;
-    color: white;
-    @include media($breakpoint-ipad) {
-      padding: 0;
-      margin: 0;
-    }
-    a{
-      display: block;
-      border-radius: 4px;
-      padding: 4%;
-      margin: 1% 0;
-      border: 2px solid rgba(255,255,255,.6);
-      width: 100%;
-      background: $burnt;
-      @include media($breakpoint-ipad){
-        padding: .8% 2%;
-        margin: 4% 0;
-        width: 70%;
-        background: none;
-      }
-      &:hover{
-        text-decoration: none;
-        background: $blackey;
+.pages{
+    h1 { font-size: 2.5em; }
+    @include media($breakpoint-ipad){
+      h1{
+        font-weight: 800;
+        font-size: 8em;
       }
     }
   }
-}
 
 
-.l-primary-content.hero{
-  margin-top: 2%;
+.l-primary-content.pages{
+    @include media($breakpoint-ipad){
+      margin-top: 3%;
+    }
+  }
+
+
+
+.logo p{
+  @include media($breakpoint-ipad){
+    font-size: 1.2em;
+    margin: .8em 0 0 0;
+  }
 }
+

@@ -5,10 +5,20 @@
 
   @include media($breakpoint-ipad){
     padding: 0;
-   text-align: right;
-   position: fixed;
-   bottom: 0;
-   left: 0;
+    text-align: right;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  @include media($breakpoint-large-screen) {
+    height: 200px;
+  }
+
+  ul{
+    @include media($breakpoint-ipad){
+      @include outer-container();
+    }
   }
 
   li{

@@ -1,9 +1,26 @@
-%h1
-  Listing
-  = @city.name
-  printers
+.cities
+  %h1
+    Listing
+    = @city.name
+    printers
+  =link_to "Back to all cities", cities_path
 
-- @printers.each do |printer|
-  %h2.printer-list= link_to  printer.shop_name, printer
 
-=link_to "Back to all cities", cities_path
+.l-primary-content.listing.city-show
+  %ul
+    - @printers.each do |printer|
+      %li.printer-list= link_to  printer.shop_name, printer
+
+.l-sidebar.sidekick
+  .logo
+    = link_to image_tag('logo.png'), root_path
+    %p The best t-shirts come from the best printers.
+
+  %h2 About Local printers
+  %p Local printers can will help you if you're going on tour, or want to visit the shop.
+
+  %h2 Going on tour?
+  %p Find the local printer in each city to save on shipping or ordering excess inventory.
+
+  %h2 Tips for visiting a print shop
+  %p Shops are busy printing t-shirts. So, don't be surprised if the printer is in an industrial part of town and is not as glamorous as Project Runway.

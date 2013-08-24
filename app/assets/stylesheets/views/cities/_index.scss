@@ -1,36 +1,23 @@
 .cities{
-  li{
-    @include text-head;
-    color: white;
-    @include media($breakpoint-ipad) {
-      padding: 0;
-      margin: 0;
-    }
-    a{
-      display: block;
-      border-radius: 4px;
-      padding: 4%;
-      margin: 1% 0;
-      border: 2px solid rgba(255,255,255,.6);
-      width: 100%;
-      background: $burnt;
-      font-size: .5em;
-      @include media($breakpoint-ipad){
-        padding: .8% 2%;
-        margin: 4% 0;
-        width: 60%;
-        background: none;
-      }
-      &:hover{
-        text-decoration: none;
-        background: $blackey;
+    h1 { font-size: 2.5em; }
+    @include media($breakpoint-ipad){
+      h1{
+        font-weight: 800;
+        font-size: 4em;
       }
     }
   }
-}
-.printer-list{
-  border-bottom: 1px solid #e4e4e4;
-  padding: 2% 0;
+
+li.city-name a{
+  font-size: .6em;
+  padding-left: 5%;
 }
 
+li.printer-list a{
+  width: 100%;
+  font-size: .6em;
+}
 
+.l-primary-content.city-show{
+  @include media($breakpoint-ipad){ margin-top: 5%; }
+}

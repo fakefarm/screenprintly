@@ -9,19 +9,13 @@
 }
 
 .printer-nav{
-  ul{
-    text-align: right;
-    margin-top: -35px;
-    margin-bottom: 24px;
-  }
+  ul{ text-align: right; }
   li{
     font-size: 1em;
     display: inline-block;
     padding: 0 1%;
   }
-  a{
-    font-family: $sans;
-  }
+  a{ font-family: $sans; }
 }
 
 .printer-head{
@@ -81,7 +75,9 @@
 }
 
 .printer-profile{
-  @include row();
+  @include white-round-box;
+  @include row;
+  h1{ @include text-head; }
 }
 
 .printer-content-nav{
