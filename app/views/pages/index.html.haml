@@ -1,12 +1,10 @@
 .l-primary-content.hero
   %h1 Need T-shirts?
   %h2 Find a t-shirt printer by
-  %ul
-    %li=link_to "City,", cities_path
-    %li=link_to "Price,", new_quote_path
-    %li
-      or
-      =link_to "Fashions"
+  %ul.hero-link
+    %li= link_to "City", cities_path
+    %li= link_to "Price", new_quote_path
+    %li= link_to "Fashions"
 
 
 .l-sidebar.sidekick
