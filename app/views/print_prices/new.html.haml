@@ -1,48 +1,49 @@
-%h1 Add a new price tier
+.summary
+  %h1 Add a new price tier
 
-= form_for [:printer, @print_price] do |f|
+  = form_for [:printer, @print_price] do |f|
 
-  - if @print_price.errors.any?
-    .errors
-      %h4 Oops...
-      - @print_price.errors.full_messages.each do |msg|
-        %p= msg
+    - if @print_price.errors.any?
+      .errors
+        %h4 Oops...
+        - @print_price.errors.full_messages.each do |msg|
+          %p= msg
 
 
-  = f.hidden_field :printer_id, value: @printer.id
+    = f.hidden_field :printer_id, value: @printer.id
 
-  .entry
-    = f.label :price_tier
-    = f.select(:price_tier, options_for_select(price_tiers))
-  .entry
-    = f.label :pallet_type
-    = f.select(:pallet_type, options_for_select([['standard'],['oversize'],['jumbo']]))
-  .entry
-    = f.label :ink_type
-    = f.select(:ink_type, options_for_select([['plastisol'],['waterbase'],['4 color process'],['discharge']]))
+    .entry
+      = f.label :price_tier
+      = f.select(:price_tier, options_for_select(price_tiers))
+    .entry
+      = f.label :pallet_type
+      = f.select(:pallet_type, options_for_select([['standard'],['oversize'],['jumbo']]))
+    .entry
+      = f.label :ink_type
+      = f.select(:ink_type, options_for_select([['plastisol'],['waterbase'],['4 color process'],['discharge']]))
 
-  %p Enter what print colors you offer. If you don't offer a color at this price tier, you can leave the field blank.
-  %table.new-print-price
-    %tr
-      %th= f.label :base_color
-      %th= f.label :one_color
-      %th= f.label :two_color
-      %th= f.label :three_color
-      %th= f.label :four_color
-      %th= f.label :five_color
-      %th= f.label :six_color
-      %th= f.label :seven_color
-      %th= f.label :eight_color
-    %tr
-      %td= f.text_field :base_color
-      %td= f.text_field :one_color
-      %td= f.text_field :two_color
-      %td= f.text_field :three_color
-      %td= f.text_field :four_color
-      %td= f.text_field :five_color
-      %td= f.text_field :six_color
-      %td= f.text_field :seven_color
-      %td= f.text_field :eight_color
+    %p Enter what print colors you offer. If you don't offer a color at this price tier, you can leave the field blank.
+    %table.new-print-price
+      %tr
+        %th= f.label :base_color
+        %th= f.label :one_color
+        %th= f.label :two_color
+        %th= f.label :three_color
+        %th= f.label :four_color
+        %th= f.label :five_color
+        %th= f.label :six_color
+        %th= f.label :seven_color
+        %th= f.label :eight_color
+      %tr
+        %td= f.text_field :base_color
+        %td= f.text_field :one_color
+        %td= f.text_field :two_color
+        %td= f.text_field :three_color
+        %td= f.text_field :four_color
+        %td= f.text_field :five_color
+        %td= f.text_field :six_color
+        %td= f.text_field :seven_color
+        %td= f.text_field :eight_color
 
-  .action
-    = f.submit  "Create price tier"
+    .action
+      = f.submit  "Create price tier"

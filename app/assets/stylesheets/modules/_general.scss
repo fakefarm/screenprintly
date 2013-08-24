@@ -9,3 +9,13 @@
 .wrap{
   margin: 3% 0;
 }
+
+.sign-in{
+  @include white-round-box;
+  h2{
+    font-size: 3em;
+  }
+  @include media($breakpoint-ipad){
+    @include span-columns(8);
+   }
+}
